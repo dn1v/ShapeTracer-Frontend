@@ -1,0 +1,32 @@
+<form [formGroup]="form" class="form-light bg-light p-5">
+    <div class="mb-3">
+        <label for="firstName" class="form-label">First name:</label>
+        <input formControlName="firstName" type="text" class="form-control" id="firstName">
+        <div *ngIf="firstName?.touched && firstName?.errors?.['required']" id="firstNameHelp" class="form-text">First name required.</div>
+    </div>
+    <div class="mb-3">
+        <label for="lastName" class="form-label">Last name:</label>
+        <input formControlName="lastName" type="text" class="form-control" id="lastName">
+        <div *ngIf="lastName?.touched && lastName?.errors?.['required']" id="lastNameHelp" class="form-text">Last name required.</div>
+    </div>
+    <div class="mb-3">
+        <label for="emailAddress" class="form-label">Email address:</label>
+        <input formControlName="email" type="email" class="form-control" id="eamilAddress" aria-describedby="emailHelp">
+        <div *ngIf="email?.touched && email?.errors?.['required']" id="emailRequiredHelp" class="form-text">Email required.</div>
+        <div *ngIf="email?.touched && email?.errors?.['email']" id="emailInvalidHelp" class="form-text">Email is not valid.</div>
+    </div>
+    <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input formControlName="password" type="password" class="form-control" id="password">
+        <div *ngIf="password?.touched && password?.errors?.['required']" id="passwordHelp" class="form-text">Password required.</div>
+    </div>
+    <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirm password:</label>
+        <input formControlName="confirmPassword" type="password" class="form-control" id="confirmPassword">
+        <div *ngIf="confirmPassword?.touched && confirmPassword?.errors?.['required']" id="confirmPasswordRequiredHelp" class="form-text">Re-enter password to confirm.</div>
+        <div *ngIf="confirmPassword?.touched && form.errors?.['notSame']" id="confirmPasswordMathingHelp" class="form-text">Passwords are not matching.</div>
+    </div>
+        <button type="button" class="btn btn-outline-dark col-12">Submit</button>
+</form>
+
+{{form.value | json}}
