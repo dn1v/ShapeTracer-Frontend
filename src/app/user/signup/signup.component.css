@@ -1,7 +1,23 @@
 form {
     width: 30%;
-    margin: 5rem auto;
+    margin: 3rem auto;
     color: #333;
     border-radius: 4px;
     box-shadow: 0 0 7px rgba(0,0,0,0.1);
+}
+
+.loader-box {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert {
+
+    /* top: 3rem;
+    left: 50%;
+    transform: translateX(-50%); */
+    width: 30%;
+    margin: 0 auto;
 }

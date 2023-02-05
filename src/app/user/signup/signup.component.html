@@ -1,4 +1,8 @@
-<form [formGroup]="form" class="form-light bg-light p-5">
+<div class="loader-box" *ngIf="loading">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+
+<form [formGroup]="form" class="form-light bg-light p-5" *ngIf="!loading">
     <div class="mb-3">
         <label for="firstName" class="form-label">First name:</label>
         <input formControlName="firstName" type="text" class="form-control" id="firstName">
@@ -26,7 +30,10 @@
         <div *ngIf="confirmPassword?.touched && confirmPassword?.errors?.['required']" id="confirmPasswordRequiredHelp" class="form-text">Re-enter password to confirm.</div>
         <div *ngIf="confirmPassword?.touched && form.errors?.['notSame']" id="confirmPasswordMathingHelp" class="form-text">Passwords are not matching.</div>
     </div>
-        <button type="button" class="btn btn-outline-dark col-12">Submit</button>
+        <button [disabled]=form.invalid (click)="submit()" type="button" class="btn btn-outline-dark col-12">Submit</button>
 </form>
+<div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
 
 {{form.value | json}}

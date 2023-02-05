@@ -1,12 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, AbstractControlOptions, FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { Athlete } from 'src/app/models/athlete.model';
+import { AuthService } from 'src/app/services/auth.service';
+import { errorMessages } from 'src/app/utils/error-messages';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+    errors = errorMessages
+    athlete: Athlete = new Athlete()
+
+    loading: boolean = false
+
+    errorMessage: string = ''
 
     form: FormGroup = new FormGroup({
         firstName: new FormControl('', Validators.required),
@@ -16,7 +24,7 @@ export class SignupComponent implements OnInit {
         confirmPassword: new FormControl('', Validators.required)
     }, { validators: this.passwordCheck })
 
-    constructor() {}
+    constructor(private authService: AuthService) {}
 
     ngOnInit(): void {
 
@@ -48,6 +56,37 @@ export class SignupComponent implements OnInit {
         const confirmPass = form.controls['confirmPassword'].value;
 
         return pass === confirmPass ? null : {notSame: true};
+    }
+
+    submit(): void {
+
+        const athlete = {
+            firstName: this.form.controls['firstName'].value,
+            lastName: this.form.controls['lastName'].value,
+            email: this.form.controls['email'].value,
+            password: this.form.controls['password'].value
+        }
+
+        this.loading = true
+        this.authService.signup(athlete).subscribe({
+            next: (response: any) => {
+                console.log('Success!', response)
+                this.loading = false
+                this.errorMessage = ''
+                this.athlete = new Athlete(response.athlete)
+            },
+            error: (err: any) => {
+
+                console.log("Error: ", err)
+
+                this.loading = false
+                this.errorMessage = errorMessages[err.status]
+
+
+            }
+        })
+        console.log(this.athlete)
+
     }
 
 }

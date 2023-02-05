@@ -12,6 +12,7 @@ import { SignupComponent } from './user/signup/signup.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoadingSpinnerComponent } from './core/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     UserComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
