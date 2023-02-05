@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, AbstractControlOptions, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Athlete } from 'src/app/models/athlete.model';
+import { AuthResponse } from 'src/app/models/authResponse.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { errorMessages } from 'src/app/utils/error-messages';
 @Component({
@@ -10,8 +11,9 @@ import { errorMessages } from 'src/app/utils/error-messages';
 })
 export class SignupComponent implements OnInit {
     errors = errorMessages
-    athlete: Athlete = new Athlete()
-
+    authResponse: AuthResponse = new AuthResponse()
+ 
+    bsAuthResponse: AuthResponse = new AuthResponse()
     loading: boolean = false
 
     errorMessage: string = ''
@@ -27,7 +29,10 @@ export class SignupComponent implements OnInit {
     constructor(private authService: AuthService) {}
 
     ngOnInit(): void {
-
+        this.authService.authehticationRes.subscribe(res => {
+            this.bsAuthResponse = res
+            console.log('BehaviourSubject >>', this.bsAuthResponse)
+        })
     }
 
     get firstName() {
@@ -69,23 +74,19 @@ export class SignupComponent implements OnInit {
 
         this.loading = true
         this.authService.signup(athlete).subscribe({
-            next: (response: any) => {
-                console.log('Success!', response)
+
+            next: (response: AuthResponse) => {
+                this.authResponse = response
+                console.log(this.authResponse)
                 this.loading = false
-                this.errorMessage = ''
-                this.athlete = new Athlete(response.athlete)
             },
             error: (err: any) => {
-
-                console.log("Error: ", err)
-
+                console.log(err)
                 this.loading = false
-                this.errorMessage = errorMessages[err.status]
-
-
+                this.errorMessage = err
             }
         })
-        console.log(this.athlete)
+
 
     }
 
