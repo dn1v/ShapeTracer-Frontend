@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthResponse } from 'src/app/models/authResponse.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { errorMessages } from 'src/app/utils/error-messages';
@@ -25,7 +26,7 @@ export class SignupComponent implements OnInit {
         confirmPassword: new FormControl('', Validators.required)
     }, { validators: this.passwordCheck })
 
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService, private router: Router) {}
 
     ngOnInit(): void {
         this.authService.authehticationRes.subscribe(res => {
@@ -78,6 +79,7 @@ export class SignupComponent implements OnInit {
                 this.authResponse = response
                 console.log(this.authResponse)
                 this.loading = false
+                this.router.navigate(['/user'])
             },
             error: (err: any) => {
                 console.log(err)
