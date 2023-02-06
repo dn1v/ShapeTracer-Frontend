@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, AbstractControlOptions, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Athlete } from 'src/app/models/athlete.model';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthResponse } from 'src/app/models/authResponse.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { errorMessages } from 'src/app/utils/error-messages';
@@ -12,7 +11,7 @@ import { errorMessages } from 'src/app/utils/error-messages';
 export class SignupComponent implements OnInit {
     errors = errorMessages
     authResponse: AuthResponse = new AuthResponse()
- 
+
     bsAuthResponse: AuthResponse = new AuthResponse()
     loading: boolean = false
 

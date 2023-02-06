@@ -30,7 +30,7 @@
         <div *ngIf="confirmPassword?.touched && confirmPassword?.errors?.['required']" id="confirmPasswordRequiredHelp" class="form-text">Re-enter password to confirm.</div>
         <div *ngIf="confirmPassword?.touched && form.errors?.['notSame']" id="confirmPasswordMathingHelp" class="form-text">Passwords are not matching.</div>
     </div>
-        <button [disabled]=form.invalid (click)="submit()" type="button" class="btn btn-outline-dark col-12">Submit</button>
+        <button [disabled]=form.invalid (click)="submit()" type="button" class="btn btn-outline-dark col-12 mt-3">Submit</button>
 </form>
 <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
     {{ errorMessage }}

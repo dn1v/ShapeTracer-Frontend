@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div class="loader-box" *ngIf="loading">
+    <app-loading-spinner></app-loading-spinner>
+</div>
+
+<form [formGroup]="form" class="form-light bg-light p-5" *ngIf="!loading">
+
+    <div class="mb-3">
+        <label for="emailAddress" class="form-label">Email address:</label>
+        <input formControlName="email" type="email" class="form-control" id="eamilAddress" aria-describedby="emailHelp">
+        <div *ngIf="email?.touched && email?.errors?.['required']" id="emailRequiredHelp" class="form-text">Email required.</div>
+        <div *ngIf="email?.touched && email?.errors?.['email']" id="emailInvalidHelp" class="form-text">Email is not valid.</div>
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input formControlName="password" type="password" class="form-control" id="password">
+        <div *ngIf="password?.touched && password?.errors?.['required']" id="passwordHelp" class="form-text">Password required.</div>
+    </div>
+
+    <button [disabled]=form.invalid (click)="submit()" type="button" class="btn btn-outline-dark col-12 mt-3">Submit</button>
+
+</form>
+
+<div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
