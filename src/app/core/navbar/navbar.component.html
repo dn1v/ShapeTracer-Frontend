@@ -1,27 +1,32 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-lg bg-body-tertiary px-3 align-items-center">
-    <div class="container-fluid">
-      <a class="navbar-brand" [routerLink]="['home']">ShapeTracer</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-link" [routerLink]="['home']">Home</a>
-            <a class="nav-link" [routerLink]="['about']">About</a>
-          </div>
-        <div class="navbar-nav"  *ngIf="!autheticated">
-          <a class="nav-link" [routerLink]="['login']">Login</a>
-          <a class="nav-link" [routerLink]="['signup']">Signup</a>
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['home']">ShapeTracer</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+          <a class="nav-link" [routerLink]="['home']">Home</a>
+          <a class="nav-link" [routerLink]="['about']">About</a>
+      </div>
+      <div ngbDropdown class="d-inline-block" *ngIf="autheticated">
+        <button type="button" class="btn btn-outline-light" id="dropdownBasic1" ngbDropdownToggle>
+          Logout
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button (click)="logoutThisDevice()" ngbDropdownItem>This device</button>
+          <button ngbDropdownItem>All devices</button>
         </div>
-        <div ngbDropdown class="d-inline-block" *ngIf="autheticated">
-			<button type="button" class="btn btn-outline-light" id="dropdownBasic1" ngbDropdownToggle>
-				Logout
-			</button>
-			<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-				<button ngbDropdownItem>This device</button>
-				<button ngbDropdownItem>All devices</button>
-			</div>
-		</div>
+      </div>
+      <div ngbDropdown class="d-inline-block" *ngIf="!autheticated">
+        <button type="button" class="btn btn-outline-light" id="dropdownBasic2" ngbDropdownToggle>
+          Account
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+          <button ngbDropdownItem [routerLink]="['login']">Login</button>
+          <button ngbDropdownItem [routerLink]="['signup']">Signup</button>
+        </div>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
