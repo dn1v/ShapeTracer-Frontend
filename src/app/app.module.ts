@@ -10,9 +10,11 @@ import { UserComponent } from './user/user.component';
 import { LoginComponent } from './user/login/login.component';
 import { SignupComponent } from './user/signup/signup.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoadingSpinnerComponent } from './core/loading-spinner/loading-spinner.component';
+import { AuthInterceptor } from './services/authInterceptor.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { LoadingSpinnerComponent } from './core/loading-spinner/loading-spinner.
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
