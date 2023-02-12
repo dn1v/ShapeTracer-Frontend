@@ -15,6 +15,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoadingSpinnerComponent } from './core/loading-spinner/loading-spinner.component';
 import { AuthInterceptor } from './services/authInterceptor.service';
 import { AuthService } from './services/auth.service';
+import { SessionRpeComponent } from './user/session-rpe/session-rpe.component';
+import { SidebarComponent } from './user/sidebar/sidebar.component';
+import { UserHomeComponent } from './user/user-home/user-home.component';
+import { POMSComponent } from './user/poms/poms.component';
+import { BodyMeasurementsComponent } from './user/body-measurements/body-measurements.component';
+import { AthleteProfileComponent } from './user/athlete-profile/athlete-profile.component';
+import { BodyweightComponent } from './user/bodyweight/bodyweight.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +32,14 @@ import { AuthService } from './services/auth.service';
     UserComponent,
     LoginComponent,
     SignupComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    SessionRpeComponent,
+    SidebarComponent,
+    UserHomeComponent,
+    POMSComponent,
+    BodyMeasurementsComponent,
+    AthleteProfileComponent,
+    BodyweightComponent
   ],
   imports: [
     BrowserModule,
