@@ -7,13 +7,11 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent implements OnInit {
 
-    constructor(private router: Router) {}
+    constructor() {}
 
     ngOnInit(): void {
 
     }
 
-    navigateTo(route: string) {
-        this.router.navigate([route]);
-    }
+
 }

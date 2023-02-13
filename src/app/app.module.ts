@@ -22,6 +22,8 @@ import { POMSComponent } from './user/poms/poms.component';
 import { BodyMeasurementsComponent } from './user/body-measurements/body-measurements.component';
 import { AthleteProfileComponent } from './user/athlete-profile/athlete-profile.component';
 import { BodyweightComponent } from './user/bodyweight/bodyweight.component';
+import { IonicModule } from '@ionic/angular';
+import { SessionRpeItemComponent } from './user/session-rpe/session-rpe-item/session-rpe-item.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +41,16 @@ import { BodyweightComponent } from './user/bodyweight/bodyweight.component';
     POMSComponent,
     BodyMeasurementsComponent,
     AthleteProfileComponent,
-    BodyweightComponent
+    BodyweightComponent,
+    SessionRpeItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    IonicModule.forRoot()
   ],
   providers: [AuthService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
   bootstrap: [AppComponent]

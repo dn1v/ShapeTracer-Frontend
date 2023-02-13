@@ -58,13 +58,14 @@ export class AuthService {
     }
 
     logoutAll(): Observable<any> {
-        const headers = new HttpHeaders({
-            'Authorization': `Bearer ${this.authehticationRes.getValue().token}`
-        })
-        this.authehticationRes.next(new AuthResponse())
+        // const headers = new HttpHeaders({
+        //     'Authorization': `Bearer ${this.authehticationRes.getValue().token}`
+        // })
+        //this.authehticationRes.next(new AuthResponse())
         this.router.navigate(['/login'])
-
-        return this.http.post(`${this.baseUrl}/logoutAll`, {}, { headers }).pipe(catchError(this.handleError))
+        this.auth.next(false)
+        localStorage.removeItem('userData')
+        return this.http.post(`${this.baseUrl}/logoutAll`, {}).pipe(catchError(this.handleError))
     }
 
     handleError(errRes: HttpErrorResponse) {

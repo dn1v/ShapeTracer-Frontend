@@ -1,1 +1,71 @@
-<p>session-rpe works!</p>
+
+
+  <table class="table table-borderless">
+    <thead>
+      <tr class="text-center center-vertically">
+        <th scope="col">#</th>
+        <th scope="col">Date</th>
+        <th scope="col">Training type</th>
+        <th scope="col">sRPE</th>
+        <th scope="col">Duration</th>
+        <th scope="col">Load</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let sessionRPE of sessionRPEs">
+            <app-session-rpe-item [sessionRPE]="sessionRPE"></app-session-rpe-item>
+        </tr>
+    </tbody>
+</table>
+
+
+
+        <!-- <tr class="text-center ">
+        <th scope="row">1</th>
+        <td>20-2-2023</td>
+        <td>Strength</td>
+        <td>5</td>
+        <td>60</td>
+        <td>300</td>
+        <td>
+            <button title="Update" class="btn bg-dark mx-3">
+                <ion-icon name="create-outline"></ion-icon>
+            </button>
+            <button class="btn bg-dark">
+                <ion-icon name="trash-outline"></ion-icon>
+            </button>
+        </td>
+      </tr>
+      <tr class="text-center">
+        <th scope="row">2</th>
+        <td>20-2-2023</td>
+        <td>Strength</td>
+        <td>5</td>
+        <td>60</td>
+        <td>300</td>
+        <td>
+            <button class="btn bg-dark mx-3">
+                <ion-icon name="create-outline"></ion-icon>
+            </button>
+            <button class="btn bg-dark">
+                <ion-icon name="trash-outline"></ion-icon>
+            </button>
+        </td>
+      </tr>
+      <tr class="text-center">
+        <th scope="row">3</th>
+        <td>20-2-2023</td>
+        <td>Strength</td>
+        <td>5</td>
+        <td>60</td>
+        <td>300</td>
+        <td>
+            <button class="btn bg-dark mx-3">
+                <ion-icon name="create-outline"></ion-icon>
+            </button>
+            <button class="btn bg-dark">
+                <ion-icon name="trash-outline"></ion-icon>
+            </button>
+        </td>
+      </tr> -->

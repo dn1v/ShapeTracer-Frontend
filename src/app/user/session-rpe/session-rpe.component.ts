@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SessionRPEResponse } from 'src/app/models/sRPE.model';
+import { SrpeService } from 'src/app/services/srpe.service';
 
 @Component({
   selector: 'app-session-rpe',
@@ -7,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SessionRpeComponent implements OnInit {
 
+    sessionRPEs: SessionRPEResponse[] = [];
 
-    constructor () {}
+    errorMessage: string = '';
+
+    constructor (private sRPE: SrpeService) {}
 
     ngOnInit(): void {
-        
+        this.sRPE.getSessionRPEs().subscribe({
+            next: (data: any) => {
+                this.sessionRPEs = data
+                console.log(this.sessionRPEs)
+            },
+            error: (err: any) => this.errorMessage = err
+        })
     }
 }
