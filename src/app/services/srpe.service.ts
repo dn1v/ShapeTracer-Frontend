@@ -13,7 +13,7 @@ export class SrpeService {
 
     constructor(private http: HttpClient) { }
 
-    getSessionRPEs(): Observable<SessionRPEResponse[]> {
+    getAll(): Observable<SessionRPEResponse[]> {
         return this.http.get(this.BASE_URL)
             .pipe(
                 map((data: any) => data && data.map((data: any) => new SessionRPEResponse(data))),
@@ -30,6 +30,10 @@ export class SrpeService {
             .pipe(
                 map((data: any) => data && new SessionRPEResponse(data)),
                 catchError(this.handleError))
+    }
+
+    deleteSessionRPE(id: string): Observable<any> {
+        return this.http.delete(this.BASE_URL + '/' + id)
     }
 
 }

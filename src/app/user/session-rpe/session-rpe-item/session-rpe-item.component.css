@@ -21,8 +21,6 @@ button {
 form {
     padding: 1rem;
     width: 100%;
-    /* position: absolute;
-    top: 0px; */
     display: flex;
     justify-content: space-between;
     align-items: center;

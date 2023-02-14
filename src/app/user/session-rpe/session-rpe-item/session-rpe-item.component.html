@@ -6,7 +6,7 @@
     <td>{{ sessionRPE.duration }}</td>
     <td>{{ sessionRPE.trainingLoad }}</td>
     <td>
-        <button class="btn btn-dark">
+        <button (click)="onDelete()" class="btn btn-dark">
             <ion-icon name="trash-outline"></ion-icon>
         </button>
         <button class="btn btn-dark">

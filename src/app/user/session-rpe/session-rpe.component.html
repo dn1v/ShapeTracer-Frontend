@@ -15,7 +15,8 @@
             <app-session-rpe-item
                 *ngFor="let sessionRPE of sessionRPEs; let i = index"
                 [sessionRPE]="sessionRPE"
-                [index]="i">
+                [index]="i"
+                (srpeDeleted)="onSrpeDeleted()">
             </app-session-rpe-item>
         </tbody>
       </table>

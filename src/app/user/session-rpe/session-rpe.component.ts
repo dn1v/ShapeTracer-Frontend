@@ -23,7 +23,12 @@ export class SessionRpeComponent implements OnInit {
     constructor (private sRPE: SrpeService) {}
 
     ngOnInit(): void {
-        this.sRPE.getSessionRPEs().subscribe({
+
+        this.getSessionRPEs()
+    }
+
+    getSessionRPEs(): void {
+        this.sRPE.getAll().subscribe({
             next: (data: any) => {
                 this.sessionRPEs = data
                 console.log(this.sessionRPEs)
@@ -39,5 +44,9 @@ export class SessionRpeComponent implements OnInit {
         })
 
         this.ngOnInit()
+    }
+
+    onSrpeDeleted(): void {
+        this.getSessionRPEs()
     }
 }
