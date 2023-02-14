@@ -9,8 +9,10 @@ import { SessionRPEResponse } from 'src/app/models/sRPE.model';
 })
 export class SessionRpeItemComponent implements OnInit {
 
-    @Input() sessionRPE: SessionRPEResponse = new SessionRPEResponse()
+    toggle: boolean = false
 
+    @Input() sessionRPE: SessionRPEResponse = new SessionRPEResponse()
+    @Input() index: number = 0
     constructor() {}
 
     ngOnInit(): void {

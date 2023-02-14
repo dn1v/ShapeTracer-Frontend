@@ -25,4 +25,11 @@ export class SrpeService {
         return throwError(() => new Error(errorMessage))
     }
 
+    postSessionRPE(obj: any): Observable<SessionRPEResponse> {
+        return this.http.post(this.BASE_URL, obj)
+            .pipe(
+                map((data: any) => data && new SessionRPEResponse(data)),
+                catchError(this.handleError))
+    }
+
 }

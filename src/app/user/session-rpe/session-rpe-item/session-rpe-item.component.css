@@ -1,3 +1,31 @@
+
+:host {
+    display: contents;
+    vertical-align: middle;
+    position: relative;
+}
+
 ion-icon {
     color: #fff;
 }
+td, th {
+    padding: 0.5rem;
+    vertical-align: middle;
+    text-align: center ;
+}
+
+button {
+    margin-right: 1rem;
+}
+
+form {
+    padding: 1rem;
+    width: 100%;
+    /* position: absolute;
+    top: 0px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+

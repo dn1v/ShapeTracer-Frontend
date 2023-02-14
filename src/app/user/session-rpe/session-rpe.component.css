@@ -1,20 +1,31 @@
-.btn {
-    color: #fff;
-}
-
-table {
-    width: 60%;
-    margin: 3rem auto;
-}
-
-td, th {
+th {
     vertical-align: middle;
-}
-
-tr {
+    text-align: center ;
+    padding: 1rem;
     border-bottom: 1px solid #333;
 }
 
-app-session-rpe-item {
-    width: 100%;
+table {
+    width: 70%;
+    margin: 3rem auto;
+    position: relative;
+}
+
+.srpe-create-form {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.srpe-create-form input {
+    padding: 0.5rem;
+    border: 1px solid #333;
+    border-radius: 6px;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
 }

@@ -25,6 +25,7 @@ import { BodyweightComponent } from './user/bodyweight/bodyweight.component';
 import { IonicModule } from '@ionic/angular';
 import { SessionRpeItemComponent } from './user/session-rpe/session-rpe-item/session-rpe-item.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
