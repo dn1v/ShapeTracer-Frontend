@@ -13,8 +13,19 @@ export class SrpeService {
 
     constructor(private http: HttpClient) { }
 
-    getAll(): Observable<SessionRPEResponse[]> {
-        return this.http.get(this.BASE_URL)
+    getAll(queryParams?: any): Observable<SessionRPEResponse[]> {
+
+        let options = {}
+
+        if (queryParams) {
+            options = {
+                params: new HttpParams()
+                    .set('skip', queryParams.skip)
+                    .set('limit', queryParams.limit)
+            }
+        }
+        console.log('Options >> ', options)
+        return this.http.get(this.BASE_URL, options)
             .pipe(
                 map((data: any) => data && data.map((data: any) => new SessionRPEResponse(data))),
                 catchError(this.handleError))

@@ -1,4 +1,25 @@
 <div class="row">
+    <form [formGroup]="form" class="srpe-create-form">
+        <div class="input-box">
+             <input formControlName="trainingType" type="text" placeholder="Training type">
+             <div *ngIf="trainingType?.touched && trainingType?.errors?.['required']" class="form-text">Training type required.</div>
+        </div>
+        <div class="input-box">
+            <input min=1 max="10" formControlName="sRPE" type="number" placeholder="sRPE">
+            <div *ngIf="sessionRPE?.touched && sessionRPE?.errors?.['required']" class="form-text">sRPE required.</div>
+            <div *ngIf="sessionRPE?.touched && sessionRPE?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+            <div *ngIf="sessionRPE?.touched && sessionRPE?.errors?.['max']" class="form-text">Must be less then or equal to 10.</div>
+
+        </div>
+        <div class="input-box">
+            <input min="1" formControlName="duration" type="number" placeholder="Duration">
+            <div *ngIf="duration?.touched && duration?.errors?.['required']" class="form-text">Training duration required.</div>
+            <div *ngIf="duration?.touched && duration?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+        </div>
+        <button [disabled]="form.invalid" (click)="submit()" class="btn btn-dark"><ion-icon name="send-outline"></ion-icon></button>
+    </form>
+</div>
+<div class="row">
     <table class="table">
         <thead>
           <tr>
@@ -21,12 +42,13 @@
         </tbody>
       </table>
 </div>
-<div class="row">
-    <form [formGroup]="form" class="srpe-create-form">
-        <input formControlName="trainingType" type="text" placeholder="Training type">
-        <input formControlName="sRPE" type="number" placeholder="sRPE">
-        <input formControlName="duration" type="number" placeholder="Duration">
-        <button (click)="submit()" class="btn btn-dark"><ion-icon name="send-outline"></ion-icon></button>
-    </form>
+<div class="row d-flex flex-row justify-content-center mt-3">
+    <button (click)="skipBack()" class=" btn pagination-btn mx-1">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+    </button>
+    <button (click)="skipForward()" class="btn pagination-btn mx-1">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+    </button>
 </div>
+
 
