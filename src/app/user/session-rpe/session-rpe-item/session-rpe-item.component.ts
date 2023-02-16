@@ -27,14 +27,15 @@ export class SessionRpeItemComponent implements OnInit {
             next: (data: any) => {
                 this.successMessage = 'sRPE deleted!'
                 console.log(this.successMessage)
+                this.srpeDeleted.emit()
+                this.ngOnInit()
             },
             error: (err: any) => {
                 this.errorMessage = err
                 console.log(this.errorMessage)
             }
         })
-        this.srpeDeleted.emit()
-        this.ngOnInit()
+
     }
 
 }

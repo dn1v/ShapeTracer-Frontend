@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SessionRPEResponse } from 'src/app/models/sRPE.model';
 import { SrpeService } from 'src/app/services/srpe.service';
+import { FilterOptions } from 'src/app/models/filterOptions.model';
+
 
 @Component({
   selector: 'app-session-rpe',
@@ -16,13 +18,23 @@ export class SessionRpeComponent implements OnInit {
         duration: new FormControl('', [Validators.required, Validators.min(1)]),
     })
 
+    rangeOptions: FilterOptions[] = [
+        { value: 'lte', description: 'Less then or equal' },
+        { value: 'gte', description: 'Greater then or equal' }]
+
+    filterByOptions: FilterOptions[] = [
+        { value: 'sRPE', description: 'sRPE'},
+        { value: 'duration', description: 'Training duration' },
+        { value: 'duration', description: 'Training duration' },
+        { value: 'trainingLoad', description: 'Training load' }]
+
     sessionRPEs: SessionRPEResponse[] = [];
 
     errorMessage: string = '';
 
     params = {
-        limit: 3,
-        skip: 1
+        limit: 5,
+        skip: 0
     }
 
     page: number = 1
@@ -58,11 +70,14 @@ export class SessionRpeComponent implements OnInit {
 
     submit(): void {
         this.sRPE.postSessionRPE(this.form.value).subscribe({
-            next: (res: SessionRPEResponse) => console.log(res),
+            next: (res: SessionRPEResponse) =>{
+                console.log(res)
+                this.getSessionRPEs()
+            } ,
             error: (err: any) => console.log(err)
         })
 
-        this.ngOnInit()
+
     }
 
     onSrpeDeleted(): void {
@@ -70,7 +85,7 @@ export class SessionRpeComponent implements OnInit {
     }
 
     skipForward(): void {
-        if (this.sessionRPEs.length === 3) {
+        if (this.sessionRPEs.length === this.params.limit) {
             this.page++
             this.params.skip = this.page
             this.ngOnInit()
@@ -80,7 +95,7 @@ export class SessionRpeComponent implements OnInit {
     }
 
     skipBack(): void {
-        if (this.page !== 1) {
+        if (this.page !== 0) {
             this.page--
             this.params.skip = this.page
             this.ngOnInit()

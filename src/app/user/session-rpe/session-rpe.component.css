@@ -1,7 +1,8 @@
 table {
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
+
 }
 
 th {
@@ -11,12 +12,15 @@ th {
     border-bottom: 1px solid #333;
 }
 
+
+
 .srpe-create-form, .form-text {
-    width: 70%;
+    width: 100%;
     margin: 2rem auto;
     display: flex;
     justify-content: center;
     gap: 1rem;
+    padding: 0 0.5rem;
 }
 
 .form-text {
@@ -48,4 +52,17 @@ th {
     height: 50px;
     border-radius: 50%;
     border: 1px solid grey
+}
+
+.box-border {
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    border-radius: 11px;
+    width: 70%;
+    margin: 1rem auto;
+
+}
+
+.row {
+    --bs-gutter-x: 0;
 }
