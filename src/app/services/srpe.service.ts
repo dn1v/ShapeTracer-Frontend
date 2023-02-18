@@ -18,13 +18,19 @@ export class SrpeService {
         let options = {}
 
         if (queryParams) {
-            options = {
-                params: new HttpParams()
-                    .set('skip', queryParams.skip)
-                    .set('limit', queryParams.limit)
-            }
+
+            let params = new HttpParams()
+            
+            // dynamically adding key-value pairs
+            Object.keys(queryParams)
+                .filter(key => queryParams[key] !== '')
+                .map(key => params = params.append(key, queryParams[key]))
+
+            console.log(params)
+
+            options = { params }
         }
-        console.log('Options >> ', options)
+
         return this.http.get(this.BASE_URL, options)
             .pipe(
                 map((data: any) => data && data.map((data: any) => new SessionRPEResponse(data))),

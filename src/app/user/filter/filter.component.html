@@ -1,22 +1,23 @@
 
 <form [formGroup]="form" class="srpe-create-form bg-light">
     <div class="input-box">
-            <!-- <label for="dateFrom">From:</label> -->
             <input title="From (date)" id="dateFrom" formControlName="dateFrom" type="date" placeholder="From">
     </div>
     <div class="input-box">
-        <!-- <label for="dateTo">To:</label> -->
+
         <input title="To (date)" id="dateTo" min=1 max="10" formControlName="dateTo" type="date" placeholder="To">
     </div>
     <div class="input-box">
-        <!-- <label for="filterBy">Filter by:</label> -->
         <select id="filterBy" formControlName="filterBy" class="filterby-select" placeholder="Filter by">
             <option value="">--</option>
             <option  *ngFor="let optionsObject of filterByOptions" [value]="optionsObject.value">{{ optionsObject.description }}</option>
         </select>
     </div>
+    <div *ngIf="filterBy?.value" class="input-box">
+        <input title="Value" id="value" formControlName="value" type="number" placeholder="value">
+
+    </div>
     <div class="input-box">
-        <!-- <label for="range">Range:</label> -->
         <select id="range" formControlName="range" class="range-select" placeholder="Range">
             <option value="">--</option>
             <option *ngFor="let optionsObject of rangeOptions" [value]="optionsObject.value">{{ optionsObject.description }}</option>

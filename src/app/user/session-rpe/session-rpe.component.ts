@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SessionRPEResponse } from 'src/app/models/sRPE.model';
 import { SrpeService } from 'src/app/services/srpe.service';
 import { FilterOptions } from 'src/app/models/filterOptions.model';
-
+import { FilterParams } from '../../models/filterParamsSessionRPE.model'
 
 @Component({
   selector: 'app-session-rpe',
@@ -23,18 +23,24 @@ export class SessionRpeComponent implements OnInit {
         { value: 'gte', description: 'Greater then or equal' }]
 
     filterByOptions: FilterOptions[] = [
-        { value: 'sRPE', description: 'sRPE'},
+        { value: 'sRPE', description: 'sRPE' },
         { value: 'duration', description: 'Training duration' },
-        { value: 'duration', description: 'Training duration' },
-        { value: 'trainingLoad', description: 'Training load' }]
+        { value: 'trainingLoad', description: 'Training load' },
+    ]
 
     sessionRPEs: SessionRPEResponse[] = [];
 
     errorMessage: string = '';
 
-    params = {
+    params: FilterParams = {
         limit: 5,
-        skip: 0
+        skip: 0,
+        dateFrom: '',
+        dateTo: '',
+        rangeOperator: '',
+        sRPE: '',
+        duration: '',
+        trainingLoad: ''
     }
 
     page: number = 1
@@ -42,7 +48,7 @@ export class SessionRpeComponent implements OnInit {
     constructor (private sRPE: SrpeService) {}
 
     ngOnInit(): void {
-
+        console.log(this.params)
         this.getSessionRPEs()
     }
 
@@ -59,16 +65,19 @@ export class SessionRpeComponent implements OnInit {
     }
 
     getSessionRPEs(): void {
+
         this.sRPE.getAll(this.params).subscribe({
             next: (data: any) => {
                 this.sessionRPEs = data
                 console.log(this.sessionRPEs)
+
             },
             error: (err: any) => this.errorMessage = err
         })
     }
 
     submit(): void {
+
         this.sRPE.postSessionRPE(this.form.value).subscribe({
             next: (res: SessionRPEResponse) =>{
                 console.log(res)
@@ -101,5 +110,30 @@ export class SessionRpeComponent implements OnInit {
             this.ngOnInit()
             console.log(this.page)
         }
+    }
+
+    onFilterFormSubmit(filterData: any): void {
+        console.log('These are the filter data: ', filterData);
+        this.params.dateFrom = filterData.dateFrom;
+        this.params.dateTo = filterData.dateTo;
+        this.params.rangeOperator = filterData.range
+        this.params.sRPE = ''
+        this.params.duration = ''
+        this.params.trainingLoad = ''
+        const filter: string = filterData.filterBy;
+        
+        switch(filter) {
+            case 'sRPE':
+                this.params.sRPE = filterData.value;
+                break;
+            case 'duration':
+                this.params.duration = filterData.value;
+                break;
+            case 'trainingLoad':
+                this.params.trainingLoad = filterData.value;
+                break;
+        }
+
+        this.getSessionRPEs()
     }
 }

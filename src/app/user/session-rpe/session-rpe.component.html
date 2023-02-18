@@ -1,5 +1,5 @@
 <div class="row bg-light box-border">
-    <app-filter [filterByOptions]="filterByOptions" [rangeOptions]="rangeOptions"></app-filter>
+    <app-filter (filterFormSubmit)="onFilterFormSubmit($event)" [filterByOptions]="filterByOptions" [rangeOptions]="rangeOptions"></app-filter>
 </div>
 <div class="row box-border">
     <div class="row">
@@ -23,7 +23,7 @@
             <button *ngIf="!form.invalid" [disabled]="form.invalid" (click)="submit()" class="btn btn-dark"><ion-icon name="send-outline"></ion-icon></button>
         </form>
     </div>
-    <div class="row">
+    <div  class="row">
         <table class="table pb-3" *ngIf="sessionRPEs.length">
             <thead>
               <tr>
@@ -36,6 +36,7 @@
                 <th scope="col">Action</th>
               </tr>
             </thead>
+
             <tbody>
                 <app-session-rpe-item
                     *ngFor="let sessionRPE of sessionRPEs; let i = index"
@@ -47,7 +48,6 @@
           </table>
     </div>
 </div>
-
 <div class="row d-flex flex-row justify-content-center mt-3">
     <button (click)="skipBack()" class=" btn pagination-btn mx-1">
         <ion-icon name="chevron-back-outline"></ion-icon>
