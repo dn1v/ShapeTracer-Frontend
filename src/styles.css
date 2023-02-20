@@ -1,14 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
-/* .box {
+.box {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 90vh;
-} */
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* .form-text {
+    position: absolute;
+    margin-top: 1rem;
+    margin: 0 0;
+    width: 100%;
+    text-align: start;
+} */
+

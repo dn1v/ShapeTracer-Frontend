@@ -45,12 +45,16 @@ export class SessionRpeComponent implements OnInit {
 
     page: number = 1
 
+    modalActive: boolean = false
+
     constructor (private sRPE: SrpeService) {}
 
     ngOnInit(): void {
         console.log(this.params)
         this.getSessionRPEs()
     }
+
+
 
     get trainingType() {
         return this.form.get('trainingType')
@@ -121,7 +125,7 @@ export class SessionRpeComponent implements OnInit {
         this.params.duration = ''
         this.params.trainingLoad = ''
         const filter: string = filterData.filterBy;
-        
+
         switch(filter) {
             case 'sRPE':
                 this.params.sRPE = filterData.value;

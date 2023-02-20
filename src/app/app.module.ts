@@ -25,6 +25,7 @@ import { BodyweightComponent } from './user/bodyweight/bodyweight.component';
 import { IonicModule } from '@ionic/angular';
 import { SessionRpeItemComponent } from './user/session-rpe/session-rpe-item/session-rpe-item.component';
 import { FilterComponent } from './user/filter/filter.component';
+import { SessionRpeModalComponent } from './user/session-rpe/session-rpe-modal/session-rpe-modal.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { FilterComponent } from './user/filter/filter.component';
     AthleteProfileComponent,
     BodyweightComponent,
     SessionRpeItemComponent,
-    FilterComponent
+    FilterComponent,
+    SessionRpeModalComponent
   ],
   imports: [
     BrowserModule,
