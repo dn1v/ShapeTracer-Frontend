@@ -1,25 +1,25 @@
 
-<form>
+<form [formGroup]="form">
     <div class="modal-input-box">
-        <input type="text" placeholder="Training type">
-        <div class="form-text">Training type required.</div>
+        <input formControlName="trainingType" type="text" placeholder="Training type">
+        <div *ngIf="trainingType?.touched && trainingType?.errors?.['required']" class="form-text">Training type required.</div>
     </div>
     <div class="modal-input-box">
-        <input type="text" placeholder="sRPE">
-        <div class="form-text">sRPE required.</div>
-        <div class="form-text">Must be greater then 0.</div>
-        <div class="form-text">Must be less or equal to 10.</div>
+        <input formControlName="sRPE" type="text" placeholder="sRPE">
+        <div *ngIf="sRPE?.touched && sRPE?.errors?.['required']" class="form-text">sRPE required.</div>
+        <div *ngIf="sRPE?.touched && sRPE?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+        <div *ngIf="sRPE?.touched && sRPE?.errors?.['max']" class="form-text">Must be less or equal to 10.</div>
     </div>
     <div class="modal-input-box">
-        <input type="text" placeholder="Training duration">
-        <div class="form-text">Duration required</div>
-        <div class="form-text">Must be greater then 0.</div>
+        <input formControlName="duration" type="text" placeholder="Training duration">
+        <div *ngIf="duration?.touched && duration?.errors?.['required']" class="form-text">Duration required</div>
+        <div *ngIf="duration?.touched && duration?.errors?.['min']" class="form-text">Must be greater then 0.</div>
     </div>
     <div class="btn-box d-flex justify-content-center g-2">
-        <button class="btn bg-dark col-5 mx-2">
+        <button class="btn bg-dark col-5 mx-2" [routerLink]="['/user/sRPE']" (click)="onEdit()">
             <ion-icon name="checkmark-outline"></ion-icon>
         </button>
-        <button class="btn bg-dark col-5 mx-2" [routerLink]="['/user/sRPE']" (click)="activeModal.close('Close click')">
+        <button class="btn bg-dark col-5 mx-2" (click)="activeModal.dismiss('Close click')">
             <ion-icon name="close-outline"></ion-icon>
         </button>
     </div>

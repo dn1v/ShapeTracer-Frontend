@@ -12,6 +12,8 @@ import { SessionRpeModalComponent } from '../session-rpe-modal/session-rpe-modal
 })
 export class SessionRpeItemComponent implements OnInit {
 
+
+
     toggle: boolean = false
     successMessage: string = ''
     errorMessage: string = ''
@@ -26,7 +28,7 @@ export class SessionRpeItemComponent implements OnInit {
 
     open() {
 		const modalRef = this.modalService.open(SessionRpeModalComponent);
-		modalRef.componentInstance.name = 'World';
+		modalRef.componentInstance._id = this.sessionRPE._id;
 	}
 
     onDelete(): void {

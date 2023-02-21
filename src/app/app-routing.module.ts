@@ -7,6 +7,7 @@ import { BodyMeasurementsComponent } from './user/body-measurements/body-measure
 import { BodyweightComponent } from './user/bodyweight/bodyweight.component';
 import { LoginComponent } from './user/login/login.component';
 import { POMSComponent } from './user/poms/poms.component';
+import { SessionRpeModalComponent } from './user/session-rpe/session-rpe-modal/session-rpe-modal.component';
 import { SessionRpeComponent } from './user/session-rpe/session-rpe.component';
 import { SignupComponent } from './user/signup/signup.component';
 import { UserHomeComponent } from './user/user-home/user-home.component';
