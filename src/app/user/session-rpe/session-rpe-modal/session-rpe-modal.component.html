@@ -16,10 +16,10 @@
         <div *ngIf="duration?.touched && duration?.errors?.['min']" class="form-text">Must be greater then 0.</div>
     </div>
     <div class="btn-box d-flex justify-content-center g-2">
-        <button class="btn bg-dark col-5 mx-2" [routerLink]="['/user/sRPE']" (click)="onEdit()">
+        <button class="btn bg-dark col-5 mx-2" [routerLink]="['/user/sRPE']" (click)="activeModal.close('Close click')" (click)="onEdit()">
             <ion-icon name="checkmark-outline"></ion-icon>
         </button>
-        <button class="btn bg-dark col-5 mx-2" (click)="activeModal.dismiss('Close click')">
+        <button class="btn bg-dark col-5 mx-2" (click)="activeModal.dismiss('Dismiss click')">
             <ion-icon name="close-outline"></ion-icon>
         </button>
     </div>

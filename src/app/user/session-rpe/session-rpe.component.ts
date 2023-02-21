@@ -4,7 +4,7 @@ import { SessionRPEResponse } from 'src/app/models/sRPE.model';
 import { SrpeService } from 'src/app/services/srpe.service';
 import { FilterOptions } from 'src/app/models/filterOptions.model';
 import { FilterParams } from '../../models/filterParamsSessionRPE.model'
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-session-rpe',
   templateUrl: './session-rpe.component.html',
@@ -45,16 +45,12 @@ export class SessionRpeComponent implements OnInit {
 
     page: number = 1
 
-    modalActive: boolean = false
-
     constructor (private sRPE: SrpeService) {}
 
     ngOnInit(): void {
         console.log(this.params)
         this.getSessionRPEs()
     }
-
-
 
     get trainingType() {
         return this.form.get('trainingType')

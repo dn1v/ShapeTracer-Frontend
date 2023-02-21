@@ -17,18 +17,22 @@ export class SessionRpeItemComponent implements OnInit {
     toggle: boolean = false
     successMessage: string = ''
     errorMessage: string = ''
+
     @Input() sessionRPE: SessionRPEResponse = new SessionRPEResponse()
     @Input() index: number = 0
     @Output() srpeDeleted = new EventEmitter<void>()
+    @Output() modalStateChange = new EventEmitter<boolean>()
     constructor(private sRPE: SrpeService,  private modalService: NgbModal) {}
 
     ngOnInit(): void {
         console.log(this.sessionRPE)
+        
     }
 
     open() {
 		const modalRef = this.modalService.open(SessionRpeModalComponent);
 		modalRef.componentInstance._id = this.sessionRPE._id;
+        this.sRPE.modalState.next(true)
 	}
 
     onDelete(): void {

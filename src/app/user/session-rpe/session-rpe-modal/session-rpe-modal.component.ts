@@ -1,9 +1,8 @@
-import { identifierName } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Observable, pipe, map } from 'rxjs';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { SessionRPEResponse } from 'src/app/models/sRPE.model';
+import { SrpeService } from 'src/app/services/srpe.service';
 
 @Component({
   selector: 'app-session-rpe-modal',
@@ -20,11 +19,13 @@ export class SessionRpeModalComponent implements OnInit {
         duration: new FormControl('', [Validators.required, Validators.min(1)])
     })
 
-    constructor (public activeModal: NgbActiveModal) {}
+    constructor (public activeModal: NgbActiveModal, private service: SrpeService) {}
 
     ngOnInit(): void {
-
-        console.log('ID >>', this._id)
+        this.service.getOne(this._id).subscribe({
+            next: (sRPE: SessionRPEResponse) => this.form.patchValue(sRPE),
+            error: (err: any) => console.log(err)
+        })
     }
 
     get trainingType () {
@@ -40,6 +41,9 @@ export class SessionRpeModalComponent implements OnInit {
     }
 
     onEdit(): void {
-
+        this.service.edit(this._id, this.form.value).subscribe({
+            next: (response: SessionRPEResponse) => console.log('Edited sRPE: ', response),
+            error: (err: any) => console.log(err)
+        })
     }
 }
