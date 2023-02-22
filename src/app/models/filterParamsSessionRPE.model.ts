@@ -7,4 +7,5 @@ export interface FilterParams {
     sRPE: string | number;
     duration: string | number;
     trainingLoad: string | number;
+    sortBy: string;
   }

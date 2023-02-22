@@ -5,4 +5,5 @@ export interface FilterOptions {
     max?: number
     minError?: string;
     maxError?: string;
+    sortBy?: string;
 }

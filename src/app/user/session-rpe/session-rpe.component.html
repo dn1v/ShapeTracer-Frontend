@@ -28,15 +28,74 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Date</th>
-                <th scope="col">Training type</th>
-                <th scope="col">sRPE</th>
-                <th scope="col">Duration</th>
-                <th scope="col">Training load</th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Date</p>
+                        <div class="sort-btns">
+                            <button (click)="sortBy('createdBy:desc')">
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button (click)="sortBy('createdBy:asc')">
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Training type</p>
+                        <!-- <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div> -->
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>sRPE</p>
+                        <div class="sort-btns">
+                            <button (click)="sortBy('sRPE:desc')">
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button (click)="sortBy('sRPE:asc')">
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Duration</p>
+                        <div class="sort-btns">
+                            <button (click)="sortBy('duration:desc')">
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button (click)="sortBy('duration:asc')">
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Training load</p>
+                        <div class="sort-btns">
+                            <button (click)="sortBy('trainingLoad:desc')">
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button (click)="sortBy('trainingLoad:asc')">
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
                 <th scope="col">Action</th>
               </tr>
             </thead>
-
             <tbody>
                 <app-session-rpe-item
                     *ngFor="let sessionRPE of sessionRPEs; let i = index"

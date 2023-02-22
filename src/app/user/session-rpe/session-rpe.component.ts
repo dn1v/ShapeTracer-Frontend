@@ -4,7 +4,7 @@ import { SessionRPEResponse } from 'src/app/models/sRPE.model';
 import { SrpeService } from 'src/app/services/srpe.service';
 import { FilterOptions } from 'src/app/models/filterOptions.model';
 import { FilterParams } from '../../models/filterParamsSessionRPE.model'
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
   selector: 'app-session-rpe',
   templateUrl: './session-rpe.component.html',
@@ -40,7 +40,8 @@ export class SessionRpeComponent implements OnInit {
         rangeOperator: '',
         sRPE: '',
         duration: '',
-        trainingLoad: ''
+        trainingLoad: '',
+        sortBy: '',
     }
 
     page: number = 1
@@ -74,6 +75,11 @@ export class SessionRpeComponent implements OnInit {
             },
             error: (err: any) => this.errorMessage = err
         })
+    }
+
+    sortBy(keyValue: string) {
+        this.params.sortBy = keyValue
+        this.getSessionRPEs()
     }
 
     submit(): void {
