@@ -2,15 +2,23 @@
     <th  scope="row">{{ index + 1 }}</th>
     <td>{{ sessionRPE.createdAt | date: 'dd.MM.yyyy'}}</td>
     <td>{{ sessionRPE.trainingType }}</td>
-    <td>{{ sessionRPE.sRPE }}</td>
+    <td><span class="semaphore"
+            [ngClass]="{
+                        'yellow': sessionRPE.sRPE >= 6 && sessionRPE.sRPE < 8,
+                        'red': sessionRPE.sRPE >= 8,
+                        'green': sessionRPE.sRPE <= 5
+                    }" >
+        {{ sessionRPE.sRPE }}
+        </span>
+    </td>
     <td>{{ sessionRPE.duration }}</td>
     <td>{{ sessionRPE.trainingLoad }}</td>
     <td>
-        <button (click)="onDelete()" class="btn btn-dark">
-            <ion-icon name="trash-outline"></ion-icon>
-        </button>
         <button class="btn btn-dark">
             <ion-icon name="create-outline" [routerLink]="['/user/sRPE']"  (click)="open()"></ion-icon>
+        </button>
+        <button (click)="onDelete()" class="btn btn-dark">
+            <ion-icon name="trash-outline"></ion-icon>
         </button>
     </td>
 </tr>

@@ -32,10 +32,10 @@
                     <div class="th-box">
                         <p>Date</p>
                         <div class="sort-btns">
-                            <button (click)="sortBy('createdBy:desc')">
+                            <button (click)="sortBy('createdAt:desc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button (click)="sortBy('createdBy:asc')">
+                            <button (click)="sortBy('createdAt:asc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -44,14 +44,6 @@
                 <th scope="col">
                     <div class="th-box">
                         <p>Training type</p>
-                        <!-- <div class="sort-btns">
-                            <button>
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button>
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div> -->
                     </div>
                 </th>
                 <th scope="col">
@@ -93,7 +85,7 @@
                         </div>
                     </div>
                 </th>
-                <th scope="col">Action</th>
+                <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
