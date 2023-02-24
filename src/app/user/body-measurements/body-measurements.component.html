@@ -3,7 +3,7 @@
         <table class="table pb-3" >
             <thead>
               <tr>
-                <th scope="col">#</th>
+             <!-- <th scope="col">#</th> -->
                 <th scope="col">
                     <div class="th-box">
                         <p>Date</p>
@@ -179,4 +179,11 @@
             </tbody>
           </table>
     </div>
+</div>
+<div class="row">
+    <app-pagination
+        [limit]="params.limit"
+        [listLength]="bodyMeasurementsList.length"
+        [page]="params.skip"
+        (pageChange)="onChangePage($event)"></app-pagination>
 </div>

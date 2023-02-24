@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SessionRPEResponse } from 'src/app/models/sRPE.model';
 import { SrpeService } from 'src/app/services/srpe.service';
 import { FilterOptions } from 'src/app/models/filterOptions.model';
-import { FilterParams } from '../../models/filterParamsSessionRPE.model'
+import { FilterParamsSessionRPE } from '../../models/filterParamsSessionRPE.model'
 
 @Component({
   selector: 'app-session-rpe',
@@ -32,7 +32,7 @@ export class SessionRpeComponent implements OnInit {
 
     errorMessage: string = '';
 
-    params: FilterParams = {
+    params: FilterParamsSessionRPE = {
         limit: 5,
         skip: 0,
         dateFrom: '',
@@ -42,6 +42,7 @@ export class SessionRpeComponent implements OnInit {
         duration: '',
         trainingLoad: '',
         sortBy: '',
+
     }
 
     page: number = 1
@@ -99,24 +100,29 @@ export class SessionRpeComponent implements OnInit {
         this.getSessionRPEs()
     }
 
-    skipForward(): void {
-        if (this.sessionRPEs.length === this.params.limit) {
-            this.page++
-            this.params.skip = this.page
-            this.ngOnInit()
-            console.log(this.sessionRPEs.length, '<< length')
-            console.log(this.page)
-        }
+    onPageChange(page: number): void {
+        this.params.skip = page
+        this.getSessionRPEs()
     }
 
-    skipBack(): void {
-        if (this.page !== 0) {
-            this.page--
-            this.params.skip = this.page
-            this.ngOnInit()
-            console.log(this.page)
-        }
-    }
+    // skipForward(): void {
+    //     if (this.sessionRPEs.length === this.params.limit) {
+    //         this.page++
+    //         this.params.skip = this.page
+    //         this.ngOnInit()
+    //         console.log(this.sessionRPEs.length, '<< length')
+    //         console.log(this.page)
+    //     }
+    // }
+
+    // skipBack(): void {
+    //     if (this.page !== 0) {
+    //         this.page--
+    //         this.params.skip = this.page
+    //         this.ngOnInit()
+    //         console.log(this.page)
+    //     }
+    // }
 
     onFilterFormSubmit(filterData: any): void {
         console.log('These are the filter data: ', filterData);
@@ -126,6 +132,7 @@ export class SessionRpeComponent implements OnInit {
         this.params.sRPE = ''
         this.params.duration = ''
         this.params.trainingLoad = ''
+
         const filter: string = filterData.filterBy;
 
         switch(filter) {

@@ -27,6 +27,7 @@ import { SessionRpeItemComponent } from './user/session-rpe/session-rpe-item/ses
 import { FilterComponent } from './user/filter/filter.component';
 import { SessionRpeModalComponent } from './user/session-rpe/session-rpe-modal/session-rpe-modal.component';
 import { BodyMeasurementsItemComponent } from './user/body-measurements/body-measurements-item/body-measurements-item.component';
+import { PaginationComponent } from './user/pagination/pagination.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { BodyMeasurementsItemComponent } from './user/body-measurements/body-mea
     SessionRpeItemComponent,
     FilterComponent,
     SessionRpeModalComponent,
-    BodyMeasurementsItemComponent
+    BodyMeasurementsItemComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
