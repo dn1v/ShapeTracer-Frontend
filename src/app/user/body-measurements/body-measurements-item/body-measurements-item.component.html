@@ -1,0 +1,27 @@
+
+<tr class="width">
+    <td  scope="row">{{ index + 1 }}</td>
+    <td>{{ bodyMeasurements.createdAt | date: 'dd.MM.yyyy'}}</td>
+    <td> {{ bodyMeasurements.chest }} </td>
+    <td> {{ bodyMeasurements.leftArm }} </td>
+    <td>{{ bodyMeasurements.rightArm }} </td>
+    <td> {{ bodyMeasurements.aboveNavel }} </td>
+    <td> {{ bodyMeasurements.navel }} </td>
+    <td> {{ bodyMeasurements.belowNavel }} </td>
+    <td> {{ bodyMeasurements.hips }} </td>
+    <td> {{ bodyMeasurements.rightThigh }} </td>
+    <td> {{ bodyMeasurements.leftThigh }} </td>
+    <td> {{ bodyMeasurements.rightCalf }} </td>
+    <td> {{ bodyMeasurements.leftCalf }} </td>
+    <td>
+        <button class="btn btn-dark">
+            <ion-icon name="create-outline"></ion-icon>
+        </button>
+        <button  class="btn btn-dark">
+            <ion-icon name="trash-outline"></ion-icon>
+        </button>
+    </td>
+</tr>
+
+<!-- (click)="onDelete()" -->
+<!-- (click)="open()" -->

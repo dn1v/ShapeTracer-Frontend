@@ -26,6 +26,7 @@ import { IonicModule } from '@ionic/angular';
 import { SessionRpeItemComponent } from './user/session-rpe/session-rpe-item/session-rpe-item.component';
 import { FilterComponent } from './user/filter/filter.component';
 import { SessionRpeModalComponent } from './user/session-rpe/session-rpe-modal/session-rpe-modal.component';
+import { BodyMeasurementsItemComponent } from './user/body-measurements/body-measurements-item/body-measurements-item.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { SessionRpeModalComponent } from './user/session-rpe/session-rpe-modal/s
     BodyweightComponent,
     SessionRpeItemComponent,
     FilterComponent,
-    SessionRpeModalComponent
+    SessionRpeModalComponent,
+    BodyMeasurementsItemComponent
   ],
   imports: [
     BrowserModule,

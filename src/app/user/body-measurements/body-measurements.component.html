@@ -1,1 +1,182 @@
-<p>body-measurements works!</p>
+<div class="row box-border width">
+    <div  class="row">
+        <table class="table pb-3" >
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Date</p>
+                        <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Chest</p>
+                        <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Right arm</p>
+                        <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Left arm</p>
+                        <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Above navel</p>
+                        <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Navel</p>
+                        <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Below navel</p>
+                        <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                 <th scope="col">
+                    <div class="th-box">
+                        <p>Hips</p>
+                        <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Right thigh</p>
+                        <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Left thigh</p>
+                        <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Right calf</p>
+                        <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Left calf</p>
+                        <div class="sort-btns">
+                            <button>
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button>
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                <!-- <app-session-rpe-item
+                    *ngFor="let sessionRPE of sessionRPEs; let i = index"
+                    [sessionRPE]="sessionRPE"
+                    [index]="i + (this.params.limit * this.params.skip)"
+                    (srpeDeleted)="onSrpeDeleted()">
+                </app-session-rpe-item> -->
+
+                <app-body-measurements-item
+                    *ngFor="let item of bodyMeasurementsList; let index = index"
+                    [bodyMeasurements]="item"
+                    [index]="index">
+                </app-body-measurements-item>
+            </tbody>
+          </table>
+    </div>
+</div>

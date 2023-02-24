@@ -12,7 +12,7 @@ export class Athlete {
     updatedAt: Date
 
     constructor(obj?: any) {
-        this._id = obj && obj._id || 0;
+        this._id = obj && obj._id || null;
         this.firstName = obj && obj.firstName || '';
         this.lastName = obj && obj.lastName || '';
         this.email = obj && obj.email || '';

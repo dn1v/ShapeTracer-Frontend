@@ -13,11 +13,113 @@
     box-sizing: border-box;
 }
 
-/* .form-text {
+.form-text {
     position: absolute;
     margin-top: 1rem;
     margin: 0 0;
     width: 100%;
     text-align: start;
-} */
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+th {
+    vertical-align: middle;
+    text-align: center ;
+    padding: 1rem;
+    border-bottom: 1px solid #333;
+}
+
+
+
+.srpe-create-form, .form-text {
+    width: 100%;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 0.5rem;
+}
+
+.form-text {
+    position: absolute;
+    margin-top: 1rem;
+    margin: 0 0;
+    width: 100%;
+    text-align: start;
+}
+
+.srpe-create-form input {
+    padding: 0.5rem;
+    border: 1px solid #333;
+    border-radius: 6px;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    align-self: flex-start;
+}
+
+.input-box, .input-box input {
+    width: 100%;
+    position: relative;
+}
+
+
+
+.pagination-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    border: 1px solid grey here
+}
+
+.box-border {
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    border-radius: 11px;
+    width: 80%;
+    margin: 1rem auto;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+
+}
+
+.row {
+    --bs-gutter-x: 0;
+}
+
+
+ngbd-modal-content {
+    border: 3px solid #333;
+
+}
+
+.th-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.th-box p {
+    margin: 0;
+    padding: 0;
+}
+
+.sort-btns {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.sort-btns button {
+    background-color: #fff;
+
+}
 
