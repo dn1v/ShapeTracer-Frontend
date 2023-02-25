@@ -1,0 +1,67 @@
+<form [formGroup]="form">
+    <div class="modal-input-box">
+        <input formControlName="chest" type="text" placeholder="Chest girth">
+        <div *ngIf="chest?.touched && chest?.errors?.['required']" class="form-text">Chest girth required</div>
+        <div *ngIf="chest?.touched && chest?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+    </div>
+    <div class="modal-input-box">
+        <input formControlName="leftArm" type="text" placeholder="Left biceps girth">
+        <div *ngIf="leftArm?.touched && leftArm?.errors?.['required']" class="form-text">Left biceps girth required.</div>
+        <div  *ngIf="leftArm?.touched && leftArm?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+
+    </div>
+    <div class="modal-input-box">
+        <input formControlName="rightArm" type="text" placeholder="Right biceps girth">
+        <div *ngIf="rightArm?.touched && rightArm?.errors?.['required']" class="form-text">Right biceps girth required.</div>
+        <div *ngIf="rightArm?.touched && rightArm?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+    </div>
+    <div class="modal-input-box">
+        <input formControlName="aboveNavel" type="text" placeholder="Above navel girth">
+        <div *ngIf="aboveNavel?.touched && aboveNavel?.errors?.['required']" class="form-text">Above navel girth required.</div>
+        <div *ngIf="aboveNavel?.touched && aboveNavel?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+    </div>
+    <div class="modal-input-box">
+        <input formControlName="navel" type="text" placeholder="Navel girth">
+        <div *ngIf="navel?.touched && navel?.errors?.['required']" class="form-text">Navel girth girth required.</div>
+        <div *ngIf="navel?.touched && navel?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+    </div>
+    <div class="modal-input-box">
+        <input formControlName="belowNavel" type="text" placeholder="Below navel girth">
+        <div *ngIf="belowNavel?.touched && belowNavel?.errors?.['required']" class="form-text">Below navel girth required.</div>
+        <div *ngIf="belowNavel?.touched && belowNavel?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+    </div>
+    <div class="modal-input-box">
+        <input formControlName="hips" type="text" placeholder="Hips girth">
+        <div *ngIf="hips?.touched && hips?.errors?.['required']" class="form-text">Hips girth girth required.</div>
+        <div *ngIf="hips?.touched && hips?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+    </div>
+    <div class="modal-input-box">
+        <input formControlName="leftThigh" type="text" placeholder="Left thigh girth">
+        <div *ngIf="leftThigh?.touched && leftThigh?.errors?.['required']" class="form-text">Left thigh girth required.</div>
+        <div *ngIf="leftThigh?.touched && leftThigh?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+    </div>
+    <div class="modal-input-box">
+        <input formControlName="rightThigh" type="text" placeholder="Right thigh girth">
+        <div *ngIf="rightThigh?.touched && rightThigh?.errors?.['required']" class="form-text">Right thigh girth required.</div>
+        <div *ngIf="rightThigh?.touched && rightThigh?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+    </div>
+    <div class="modal-input-box">
+        <input formControlName="leftCalf" type="text" placeholder="Left calf girth">
+        <div *ngIf="leftCalf?.touched && leftCalf?.errors?.['required']" class="form-text">Left calf girth required.</div>
+        <div *ngIf="leftCalf?.touched && leftCalf?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+    </div>
+    <div class="modal-input-box">
+        <input formControlName="rightCalf" type="text" placeholder="Right calf girth">
+        <div *ngIf="rightCalf?.touched && rightCalf?.errors?.['required']" class="form-text">Right calf girth required.</div>
+        <div *ngIf="rightCalf?.touched && rightCalf?.errors?.['min']" class="form-text">Must be greater then 0.</div>
+    </div>
+    <div class="btn-box d-flex justify-content-center g-2">
+        <button class="btn bg-dark col-5 mx-2" [routerLink]="['/user/bodyMeasurements', 'edited']" (click)="activeModal.close('Close click')" (click)="onEdit()">
+            <ion-icon name="checkmark-outline"></ion-icon>
+        </button>
+        <button class="btn bg-dark col-5 mx-2" (click)="activeModal.dismiss('Dismiss click')">
+            <ion-icon name="close-outline"></ion-icon>
+        </button>
+    </div>
+</form>
+

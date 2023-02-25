@@ -28,6 +28,7 @@ import { FilterComponent } from './user/filter/filter.component';
 import { SessionRpeModalComponent } from './user/session-rpe/session-rpe-modal/session-rpe-modal.component';
 import { BodyMeasurementsItemComponent } from './user/body-measurements/body-measurements-item/body-measurements-item.component';
 import { PaginationComponent } from './user/pagination/pagination.component';
+import { BodyMeasurementsModalComponent } from './user/body-measurements/body-measurements-modal/body-measurements-modal.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { PaginationComponent } from './user/pagination/pagination.component';
     FilterComponent,
     SessionRpeModalComponent,
     BodyMeasurementsItemComponent,
-    PaginationComponent
+    PaginationComponent,
+    BodyMeasurementsModalComponent
   ],
   imports: [
     BrowserModule,

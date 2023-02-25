@@ -105,25 +105,6 @@ export class SessionRpeComponent implements OnInit {
         this.getSessionRPEs()
     }
 
-    // skipForward(): void {
-    //     if (this.sessionRPEs.length === this.params.limit) {
-    //         this.page++
-    //         this.params.skip = this.page
-    //         this.ngOnInit()
-    //         console.log(this.sessionRPEs.length, '<< length')
-    //         console.log(this.page)
-    //     }
-    // }
-
-    // skipBack(): void {
-    //     if (this.page !== 0) {
-    //         this.page--
-    //         this.params.skip = this.page
-    //         this.ngOnInit()
-    //         console.log(this.page)
-    //     }
-    // }
-
     onFilterFormSubmit(filterData: any): void {
         console.log('These are the filter data: ', filterData);
         this.params.dateFrom = filterData.dateFrom;

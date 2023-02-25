@@ -1,4 +1,11 @@
 <div class="row box-border width">
+    <app-filter
+        [rangeOptions]="rangeOptions"
+        [filterByOptions]="filterByOptions"
+        (filterFormSubmit)="onFilterFormSubmit($event)">
+    </app-filter>
+</div>
+<div class="row box-border width">
     <div  class="row">
         <table class="table pb-3" >
             <thead>

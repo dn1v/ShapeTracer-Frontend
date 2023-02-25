@@ -34,12 +34,11 @@ export class BodyMeasurementsService {
 
         return this.http.get(this.BASE_URL, options)
             .pipe(
-                map((data: any) => data && data.map((data: any) => data && new BodyMeasurements(data))),
-                catchError(this.handleError))
+                map((data: any) => data && data.map((data: any) => data && new BodyMeasurements(data))))
     }
 
     deleteBodyMeasurements(_id: string): Observable<any> {
-        return this.http.delete(`${this.BASE_URL}/${_id}`).pipe(catchError(this.handleError))
+        return this.http.delete(`${this.BASE_URL}/${_id}`)
     }
 
     handleError(errRes: HttpErrorResponse) {
