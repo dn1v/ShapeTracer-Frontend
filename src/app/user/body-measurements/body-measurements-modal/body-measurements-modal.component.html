@@ -1,56 +1,67 @@
 <form [formGroup]="form">
     <div class="modal-input-box">
-        <input formControlName="chest" type="text" placeholder="Chest girth">
+        <small>Chest girth</small>
+        <input title="Chest girth" formControlName="chest" type="text" placeholder="Chest girth">
         <div *ngIf="chest?.touched && chest?.errors?.['required']" class="form-text">Chest girth required</div>
         <div *ngIf="chest?.touched && chest?.errors?.['min']" class="form-text">Must be greater then 0.</div>
     </div>
     <div class="modal-input-box">
+        <small>Left biceps girth</small>
         <input formControlName="leftArm" type="text" placeholder="Left biceps girth">
         <div *ngIf="leftArm?.touched && leftArm?.errors?.['required']" class="form-text">Left biceps girth required.</div>
         <div  *ngIf="leftArm?.touched && leftArm?.errors?.['min']" class="form-text">Must be greater then 0.</div>
 
     </div>
     <div class="modal-input-box">
+        <small>Right biceps girth</small>
         <input formControlName="rightArm" type="text" placeholder="Right biceps girth">
         <div *ngIf="rightArm?.touched && rightArm?.errors?.['required']" class="form-text">Right biceps girth required.</div>
         <div *ngIf="rightArm?.touched && rightArm?.errors?.['min']" class="form-text">Must be greater then 0.</div>
     </div>
     <div class="modal-input-box">
+        <small>Above navel girth</small>
         <input formControlName="aboveNavel" type="text" placeholder="Above navel girth">
         <div *ngIf="aboveNavel?.touched && aboveNavel?.errors?.['required']" class="form-text">Above navel girth required.</div>
         <div *ngIf="aboveNavel?.touched && aboveNavel?.errors?.['min']" class="form-text">Must be greater then 0.</div>
     </div>
     <div class="modal-input-box">
+        <small>Navel girth</small>
         <input formControlName="navel" type="text" placeholder="Navel girth">
         <div *ngIf="navel?.touched && navel?.errors?.['required']" class="form-text">Navel girth girth required.</div>
         <div *ngIf="navel?.touched && navel?.errors?.['min']" class="form-text">Must be greater then 0.</div>
     </div>
     <div class="modal-input-box">
+        <small>Below navel girth</small>
         <input formControlName="belowNavel" type="text" placeholder="Below navel girth">
         <div *ngIf="belowNavel?.touched && belowNavel?.errors?.['required']" class="form-text">Below navel girth required.</div>
         <div *ngIf="belowNavel?.touched && belowNavel?.errors?.['min']" class="form-text">Must be greater then 0.</div>
     </div>
     <div class="modal-input-box">
+        <small>Hips girth</small>
         <input formControlName="hips" type="text" placeholder="Hips girth">
         <div *ngIf="hips?.touched && hips?.errors?.['required']" class="form-text">Hips girth girth required.</div>
         <div *ngIf="hips?.touched && hips?.errors?.['min']" class="form-text">Must be greater then 0.</div>
     </div>
     <div class="modal-input-box">
+        <small>Left thigh girth</small>
         <input formControlName="leftThigh" type="text" placeholder="Left thigh girth">
         <div *ngIf="leftThigh?.touched && leftThigh?.errors?.['required']" class="form-text">Left thigh girth required.</div>
         <div *ngIf="leftThigh?.touched && leftThigh?.errors?.['min']" class="form-text">Must be greater then 0.</div>
     </div>
     <div class="modal-input-box">
+        <small>Right thigh girth</small>
         <input formControlName="rightThigh" type="text" placeholder="Right thigh girth">
         <div *ngIf="rightThigh?.touched && rightThigh?.errors?.['required']" class="form-text">Right thigh girth required.</div>
         <div *ngIf="rightThigh?.touched && rightThigh?.errors?.['min']" class="form-text">Must be greater then 0.</div>
     </div>
     <div class="modal-input-box">
+        <small>Left calf girth</small>
         <input formControlName="leftCalf" type="text" placeholder="Left calf girth">
         <div *ngIf="leftCalf?.touched && leftCalf?.errors?.['required']" class="form-text">Left calf girth required.</div>
         <div *ngIf="leftCalf?.touched && leftCalf?.errors?.['min']" class="form-text">Must be greater then 0.</div>
     </div>
     <div class="modal-input-box">
+        <small>Right calf girth</small>
         <input formControlName="rightCalf" type="text" placeholder="Right calf girth">
         <div *ngIf="rightCalf?.touched && rightCalf?.errors?.['required']" class="form-text">Right calf girth required.</div>
         <div *ngIf="rightCalf?.touched && rightCalf?.errors?.['min']" class="form-text">Must be greater then 0.</div>

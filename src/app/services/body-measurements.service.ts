@@ -37,8 +37,22 @@ export class BodyMeasurementsService {
                 map((data: any) => data && data.map((data: any) => data && new BodyMeasurements(data))))
     }
 
+    getOne(_id: string): Observable<BodyMeasurements> {
+        return this.http.get(`${this.BASE_URL}/${_id}`).pipe(
+            map((data: any) => data && new BodyMeasurements(data)),
+            catchError(this.handleError)
+        )
+    }
+
     deleteBodyMeasurements(_id: string): Observable<any> {
         return this.http.delete(`${this.BASE_URL}/${_id}`)
+    }
+
+    edit(_id: string, obj: any): Observable<BodyMeasurements> {
+        return this.http.patch(`${this.BASE_URL}/${_id}`, obj)
+            .pipe(
+                map((data: any) => data && new BodyMeasurements(data)),
+                catchError(this.handleError))
     }
 
     handleError(errRes: HttpErrorResponse) {

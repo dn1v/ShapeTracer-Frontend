@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { BodyMeasurements } from 'src/app/models/bodyMeasurements.model';
 import { BodyMeasurementsService } from 'src/app/services/body-measurements.service';
 @Component({
   selector: 'app-body-measurements-modal',
@@ -11,6 +12,8 @@ export class BodyMeasurementsModalComponent implements OnInit {
 
 
     @Input() _id: string = ''
+
+
 
     form: FormGroup = new FormGroup({
         chest: new FormControl('', [Validators.required, Validators.min(1)]),
@@ -29,8 +32,11 @@ export class BodyMeasurementsModalComponent implements OnInit {
     constructor(public activeModal: NgbActiveModal, private service: BodyMeasurementsService) {}
 
     ngOnInit(): void {
-
-    }
+        this.service.getOne(this._id).subscribe({
+            next: (bodyMeasurements: BodyMeasurements) => this.form.patchValue(bodyMeasurements),
+            error: (err: any) => console.log(err)
+        })
+     }
 
     get chest () {
         return this.form.get('chest')
@@ -77,6 +83,9 @@ export class BodyMeasurementsModalComponent implements OnInit {
     }
 
     onEdit(): void {
-
+        this.service.edit(this._id, this.form.value).subscribe({
+            next: (response: BodyMeasurements) => console.log(response),
+            error: (err: any) => console.log(err)
+        })
     }
 }
