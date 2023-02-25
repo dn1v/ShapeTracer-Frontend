@@ -55,4 +55,13 @@ export class BodyMeasurementsComponent implements OnInit {
         this.params.skip = skip
         this.getBodyMeasurementList()
     }
+
+    sortBy(keyValue: string) {
+        this.params.sortBy = keyValue
+        this.getBodyMeasurementList()
+    }
+
+    onBodyMeasurementDeleted(): void {
+        this.getBodyMeasurementList()
+    }
 }

@@ -38,6 +38,10 @@ export class BodyMeasurementsService {
                 catchError(this.handleError))
     }
 
+    deleteBodyMeasurements(_id: string): Observable<any> {
+        return this.http.delete(`${this.BASE_URL}/${_id}`).pipe(catchError(this.handleError))
+    }
+
     handleError(errRes: HttpErrorResponse) {
         const errorMessage = errorMessages[errRes.status] || errorMessages['unknownError']
         return throwError(() => new Error(errorMessage))

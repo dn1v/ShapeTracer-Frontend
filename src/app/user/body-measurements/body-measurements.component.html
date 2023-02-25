@@ -8,10 +8,10 @@
                     <div class="th-box">
                         <p>Date</p>
                         <div class="sort-btns">
-                            <button>
+                            <button (click)="sortBy('createdAt:asc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button>
+                            <button (click)="sortBy('createdAt:desc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -21,10 +21,10 @@
                     <div class="th-box">
                         <p>Chest</p>
                         <div class="sort-btns">
-                            <button>
+                            <button (click)="sortBy('chest:asc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button>
+                            <button (click)="sortBy('chest:desc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -34,10 +34,10 @@
                     <div class="th-box">
                         <p>Right arm</p>
                         <div class="sort-btns">
-                            <button>
+                            <button (click)="sortBy('rigthArm:asc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button>
+                            <button (click)="sortBy('rightArm:desc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -47,10 +47,10 @@
                     <div class="th-box">
                         <p>Left arm</p>
                         <div class="sort-btns">
-                            <button>
+                            <button (click)="sortBy('leftArm:asc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button>
+                            <button (click)="sortBy('leftArm:desc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -60,10 +60,10 @@
                     <div class="th-box">
                         <p>Above navel</p>
                         <div class="sort-btns">
-                            <button>
+                            <button (click)="sortBy('aboveNavel:asc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button>
+                            <button (click)="sortBy('aboveNavel:desc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -73,10 +73,10 @@
                     <div class="th-box">
                         <p>Navel</p>
                         <div class="sort-btns">
-                            <button>
+                            <button (click)="sortBy('navel:asc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button>
+                            <button (click)="sortBy('navel:desc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -86,10 +86,10 @@
                     <div class="th-box">
                         <p>Below navel</p>
                         <div class="sort-btns">
-                            <button>
+                            <button (click)="sortBy('belowNavel:asc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button>
+                            <button (click)="sortBy('belowNavel:desc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -99,10 +99,10 @@
                     <div class="th-box">
                         <p>Hips</p>
                         <div class="sort-btns">
-                            <button>
+                            <button (click)="sortBy('hips:asc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button>
+                            <button (click)="sortBy('hips:desc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -112,10 +112,10 @@
                     <div class="th-box">
                         <p>Right thigh</p>
                         <div class="sort-btns">
-                            <button>
+                            <button (click)="sortBy('rightThigh:asc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button>
+                            <button (click)="sortBy('rightThigh:desc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -125,10 +125,10 @@
                     <div class="th-box">
                         <p>Left thigh</p>
                         <div class="sort-btns">
-                            <button>
+                            <button (click)="sortBy('leftThigh:asc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button>
+                            <button (click)="sortBy('leftThigh:desc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -138,10 +138,10 @@
                     <div class="th-box">
                         <p>Right calf</p>
                         <div class="sort-btns">
-                            <button>
+                            <button (click)="sortBy('rightCalf:asc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button>
+                            <button (click)="sortBy('rightCalf:desc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -151,10 +151,10 @@
                     <div class="th-box">
                         <p>Left calf</p>
                         <div class="sort-btns">
-                            <button>
+                            <button (click)="sortBy('leftCalf:asc')">
                                 <ion-icon name="caret-up-outline"></ion-icon>
                             </button>
-                            <button>
+                            <button (click)="sortBy('leftCalf:desc')">
                                 <ion-icon name="caret-down-outline"></ion-icon>
                             </button>
                         </div>
@@ -174,7 +174,8 @@
                 <app-body-measurements-item
                     *ngFor="let item of bodyMeasurementsList; let index = index"
                     [bodyMeasurements]="item"
-                    [index]="index">
+                    [index]="index"
+                    (bodyMeasurementDeleted)="onBodyMeasurementDeleted()">
                 </app-body-measurements-item>
             </tbody>
           </table>

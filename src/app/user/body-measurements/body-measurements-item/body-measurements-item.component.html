@@ -1,6 +1,5 @@
 
 <tr class="width">
-    <!-- <td  scope="row">{{ index + 1 }}</td> -->
     <td>{{ bodyMeasurements.createdAt | date: 'dd.MM.yyyy'}}</td>
     <td> {{ bodyMeasurements.chest }} </td>
     <td> {{ bodyMeasurements.leftArm }} </td>
@@ -17,11 +16,9 @@
         <button class="btn btn-dark">
             <ion-icon name="create-outline"></ion-icon>
         </button>
-        <button  class="btn btn-dark">
+        <button (click)="onDelete()" class="btn btn-dark">
             <ion-icon name="trash-outline"></ion-icon>
         </button>
     </td>
 </tr>
 
-<!-- (click)="onDelete()" -->
-<!-- (click)="open()" -->

@@ -67,7 +67,7 @@ export class SrpeService {
     }
 
     deleteSessionRPE(id: string): Observable<any> {
-        return this.http.delete(this.BASE_URL + '/' + id)
+        return this.http.delete(this.BASE_URL + '/' + id).pipe(catchError(this.handleError))
     }
 
 }
