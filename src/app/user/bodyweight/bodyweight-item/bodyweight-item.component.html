@@ -1,0 +1,12 @@
+<tr>
+    <td>{{ bodyweight.createdAt | date: 'dd.MM.yyyy' }}</td>
+    <td>{{ bodyweight.weight}}</td>
+    <td>
+        <button class="btn btn-dark">
+            <ion-icon name="create-outline"></ion-icon>
+        </button>
+        <button (click)="onDelete()" class="btn btn-dark">
+            <ion-icon name="trash-outline"></ion-icon>
+        </button>
+    </td>
+</tr>

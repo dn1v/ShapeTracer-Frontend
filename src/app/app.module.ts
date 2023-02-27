@@ -29,6 +29,8 @@ import { SessionRpeModalComponent } from './user/session-rpe/session-rpe-modal/s
 import { BodyMeasurementsItemComponent } from './user/body-measurements/body-measurements-item/body-measurements-item.component';
 import { PaginationComponent } from './user/pagination/pagination.component';
 import { BodyMeasurementsModalComponent } from './user/body-measurements/body-measurements-modal/body-measurements-modal.component';
+import { BodyweightFormComponent } from './user/bodyweight/bodyweight-form/bodyweight-form.component';
+import { BodyweightItemComponent } from './user/bodyweight/bodyweight-item/bodyweight-item.component';
 
 
 @NgModule({
@@ -53,7 +55,9 @@ import { BodyMeasurementsModalComponent } from './user/body-measurements/body-me
     SessionRpeModalComponent,
     BodyMeasurementsItemComponent,
     PaginationComponent,
-    BodyMeasurementsModalComponent
+    BodyMeasurementsModalComponent,
+    BodyweightFormComponent,
+    BodyweightItemComponent
   ],
   imports: [
     BrowserModule,

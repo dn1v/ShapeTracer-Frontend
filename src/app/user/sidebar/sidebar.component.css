@@ -20,12 +20,17 @@ li {
     cursor: pointer;
     border-radius: 777px;
     margin: 0.5rem;
+    vertical-align: middle;
 }
 
 
-li a {
+li {
     text-decoration: none;
     color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
 }
 
 
@@ -35,12 +40,20 @@ li:hover {
 
 }
 
+li:hover ion-icon {
+    color: #fff;
+    font-weight: bold;
+
+}
+
 li:hover a {
     color: #fff;
     font-weight: bold;
 }
 
 
-
+ion-icon {
+    font-size: 2rem;
+}
 
 

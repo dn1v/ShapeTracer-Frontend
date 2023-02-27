@@ -11,8 +11,9 @@
           <a *ngIf="autheticated" class="nav-link" [routerLink]="['user']">Metrics</a>
       </div>
       <div ngbDropdown class="d-inline-block" *ngIf="autheticated">
+
         <button type="button" class="btn btn-outline-light" id="dropdownBasic1" ngbDropdownToggle>
-          Logout
+            <ion-icon name="log-out-outline"></ion-icon><span>Logout</span>
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <button (click)="logoutThisDevice()" ngbDropdownItem>This device</button>

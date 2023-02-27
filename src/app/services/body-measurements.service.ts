@@ -55,6 +55,14 @@ export class BodyMeasurementsService {
                 catchError(this.handleError))
     }
 
+    postBodyMeasurements(obj: any): Observable<any> {
+        return this.http.post(this.BASE_URL, obj)
+            .pipe(
+                map((data: any) => data && new BodyMeasurements(data)),
+                catchError(this.handleError)
+            )
+    }
+
     handleError(errRes: HttpErrorResponse) {
         const errorMessage = errorMessages[errRes.status] || errorMessages['unknownError']
         return throwError(() => new Error(errorMessage))

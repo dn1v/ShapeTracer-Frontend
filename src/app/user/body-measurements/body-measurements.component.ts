@@ -3,7 +3,8 @@ import { BodyMeasurements } from 'src/app/models/bodyMeasurements.model';
 import { FilterParamsBodyMeasurements } from 'src/app/models/filterParamsBodyMeasurements.model';
 import { BodyMeasurementsService } from 'src/app/services/body-measurements.service';
 import { FilterOptions } from 'src/app/models/filterOptions.model';
-
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { BodyMeasurementsModalComponent } from './body-measurements-modal/body-measurements-modal.component';
 @Component({
   selector: 'app-body-measurements',
   templateUrl: './body-measurements.component.html',
@@ -33,7 +34,7 @@ export class BodyMeasurementsComponent implements OnInit {
 
     bodyMeasurementsList: BodyMeasurements[] = []
 
-    constructor(private service: BodyMeasurementsService) {}
+    constructor(private service: BodyMeasurementsService, private modalService: NgbModal) {}
 
     ngOnInit(): void {
 
@@ -58,6 +59,12 @@ export class BodyMeasurementsComponent implements OnInit {
         {value: 'rightCalf', description: 'Right calf'},
         {value: 'leftCalf', description: 'Left calf'},
     ]
+
+    open() {
+		const modalRef = this.modalService.open(BodyMeasurementsModalComponent);
+
+
+	}
 
     getBodyMeasurementList (): void {
         this.service.getAll(this.params).subscribe({

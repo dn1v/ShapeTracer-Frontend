@@ -32,6 +32,7 @@ export class BodyMeasurementsModalComponent implements OnInit {
     constructor(public activeModal: NgbActiveModal, private service: BodyMeasurementsService) {}
 
     ngOnInit(): void {
+
         this.service.getOne(this._id).subscribe({
             next: (bodyMeasurements: BodyMeasurements) => this.form.patchValue(bodyMeasurements),
             error: (err: any) => console.log(err)
@@ -82,10 +83,20 @@ export class BodyMeasurementsModalComponent implements OnInit {
         return this.form.get('rightCalf')
     }
 
-    onEdit(): void {
-        this.service.edit(this._id, this.form.value).subscribe({
-            next: (response: BodyMeasurements) => console.log(response),
-            error: (err: any) => console.log(err)
-        })
+    onSubmit(): void {
+
+        if (this._id) {
+            this.service.edit(this._id, this.form.value).subscribe({
+                next: (response: BodyMeasurements) => console.log(response),
+                error: (err: any) => console.log(err)
+            })
+        } else {
+            this.service.postBodyMeasurements(this.form.value).subscribe({
+                next: (response: BodyMeasurements) => console.log(response),
+                error: (err: any) => console.log(err)
+            })
+        }
+
+
     }
 }

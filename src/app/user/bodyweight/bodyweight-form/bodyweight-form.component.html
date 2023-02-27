@@ -1,0 +1,13 @@
+
+<form [formGroup]="form" class="row d-flex">
+    <div class="modal-input-box col-5">
+        <input formControlName="weight" type="text" placeholder="Bodyweight">
+        <div  class="form-text">Duration required</div>
+        <div class="form-text">Must be greater then 0.</div>
+    </div>
+    <div class="btn-box d-flex justify-content-center col-5">
+        <button (click)="onSubmit()" class="btn bg-dark col-12" >
+            <ion-icon name="checkmark-outline"></ion-icon>
+        </button>
+    </div>
+</form>

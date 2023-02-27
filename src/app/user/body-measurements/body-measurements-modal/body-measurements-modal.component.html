@@ -67,7 +67,7 @@
         <div *ngIf="rightCalf?.touched && rightCalf?.errors?.['min']" class="form-text">Must be greater then 0.</div>
     </div>
     <div class="btn-box d-flex justify-content-center g-2">
-        <button class="btn bg-dark col-5 mx-2" [routerLink]="['/user/bodyMeasurements', 'edited']" (click)="activeModal.close('Close click')" (click)="onEdit()">
+        <button class="btn bg-dark col-5 mx-2" [routerLink]="['/user/bodyMeasurements', 'submited']" (click)="activeModal.close('Close click')" (click)="onSubmit()">
             <ion-icon name="checkmark-outline"></ion-icon>
         </button>
         <button class="btn bg-dark col-5 mx-2" (click)="activeModal.dismiss('Dismiss click')">
