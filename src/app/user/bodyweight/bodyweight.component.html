@@ -1,11 +1,11 @@
 
-<!-- <div class="row box-border width">
+<div class="row box-border width">
     <app-filter
-        [rangeOptions]="rangeOptions"
         [filterByOptions]="filterByOptions"
+        [rangeOptions]="rangeOptions"
         (filterFormSubmit)="onFilterFormSubmit($event)">
     </app-filter>
-</div> -->
+</div>
 <div class="row  width">
     <div  class="row justify-content-center">
         <div class="col-4 m-3">
@@ -29,10 +29,10 @@
                         <div class="th-box">
                             <p>Bodyweight (kg)</p>
                             <div class="sort-btns">
-                                <button (click)="sortBy('chest:asc')">
+                                <button (click)="sortBy('weight:asc')">
                                     <ion-icon name="caret-up-outline"></ion-icon>
                                 </button>
-                                <button (click)="sortBy('chest:desc')">
+                                <button (click)="sortBy('weight:desc')">
                                     <ion-icon name="caret-down-outline"></ion-icon>
                                 </button>
                             </div>
@@ -44,13 +44,25 @@
                 <tbody>
                     <app-bodyweight-item
                         *ngFor="let bodyweight of bodyweightList"
-                        [bodyweight]="bodyweight">
+                        [bodyweight]="bodyweight"
+                        (bodyweightDeleted)="onBodyweightDeleted()">
                     </app-bodyweight-item>
                 </tbody>
             </table>
         </div>
         <div class="col-4 m-3 align-self-start">
-            <app-bodyweight-form></app-bodyweight-form>
+                <app-bodyweight-form
+                    (createdBodyweight)="onCreatedBodyweight()"
+                    [_id]="editID">
+                </app-bodyweight-form>
         </div>
     </div>
+</div>
+<div class="row m-5">
+    <app-pagination
+        [limit]="params.limit"
+        [listLength]="bodyweightList.length"
+        [page]="params.skip"
+        (pageChange)="onChangePage($event)">
+    </app-pagination>
 </div>

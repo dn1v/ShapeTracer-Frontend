@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, map, throwError, catchError } from 'rxjs';
 import { BodyMeasurements } from '../models/bodyMeasurements.model';
 import { errorMessages } from '../utils/error-messages';
+import { options } from '../utils/http-options-generator';
 
 @Injectable({
   providedIn: 'root'
@@ -16,23 +17,7 @@ export class BodyMeasurementsService {
 
     getAll(queryParams?: any): Observable<BodyMeasurements[]> {
 
-        let options = {}
-
-        if (queryParams) {
-
-            let params = new HttpParams()
-
-            // dynamically adding key-value pairs
-            Object.keys(queryParams)
-                .filter(key => queryParams[key] !== '')
-                .map(key => params = params.append(key, queryParams[key]))
-
-            console.log(params)
-
-            options = { params }
-        }
-
-        return this.http.get(this.BASE_URL, options)
+        return this.http.get(this.BASE_URL, options(queryParams))
             .pipe(
                 map((data: any) => data && data.map((data: any) => data && new BodyMeasurements(data))))
     }

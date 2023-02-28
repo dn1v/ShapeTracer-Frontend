@@ -3,7 +3,7 @@ import { Observable, map, throwError, catchError, BehaviorSubject } from 'rxjs';
 import { HttpClient, HttpParams, HttpErrorResponse,  } from '@angular/common/http';
 import { SessionRPEResponse } from '../models/sRPE.model';
 import { errorMessages } from '../utils/error-messages';
-
+import { options } from '../utils/http-options-generator';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,23 +17,7 @@ export class SrpeService {
 
     getAll(queryParams?: any): Observable<SessionRPEResponse[]> {
 
-        let options = {}
-
-        if (queryParams) {
-
-            let params = new HttpParams()
-
-            // dynamically adding key-value pairs
-            Object.keys(queryParams)
-                .filter(key => queryParams[key] !== '')
-                .map(key => params = params.append(key, queryParams[key]))
-
-            console.log(params)
-
-            options = { params }
-        }
-
-        return this.http.get(this.BASE_URL, options)
+        return this.http.get(this.BASE_URL, options(queryParams))
             .pipe(
                 map((data: any) => data && data.map((data: any) => new SessionRPEResponse(data))),
                 catchError(this.handleError))
@@ -54,7 +38,7 @@ export class SrpeService {
                 catchError(this.handleError))
     }
 
-   
+
 
     handleError(errRes: HttpErrorResponse) {
         const errorMessage = errorMessages[errRes.status] || errorMessages['unknownError']
