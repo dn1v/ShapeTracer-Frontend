@@ -23,6 +23,7 @@ const routes: Routes = [
         { path: 'bodyMeasurements', component: BodyMeasurementsComponent },
         { path: 'bodyMeasurements/submited', component: BodyMeasurementsComponent},
         { path: 'bodyweight', component: BodyweightComponent },
+        { path: 'bodyweight/:id', component: BodyweightComponent },
         { path: 'profile', component: AthleteProfileComponent }
     ]},
     { path: 'login', component: LoginComponent },

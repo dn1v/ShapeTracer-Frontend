@@ -2,7 +2,7 @@
     <td>{{ bodyweight.createdAt | date: 'dd.MM.yyyy' }}</td>
     <td>{{ bodyweight.weight}}</td>
     <td>
-        <button [routerLink]="['/edit', bodyweight._id]" (click)="onEdit()" class="btn btn-dark">
+        <button [routerLink]="['/user/bodyweight', bodyweight._id]" (click)="onEdit()" class="btn btn-dark">
             <ion-icon name="create-outline"></ion-icon>
         </button>
         <button (click)="onDelete()" class="btn btn-dark">

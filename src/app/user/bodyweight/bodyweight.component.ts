@@ -43,7 +43,7 @@ export class BodyweightComponent implements OnInit {
         this.service.getAll(this.params).subscribe({
             next: (bodyweight: Bodyweight[]) => {
                 this.bodyweightList = bodyweight
-                console.log(this.bodyweightList)
+                console.log('Pagination check', this.bodyweightList)
             },
             error: (err: any) => console.log(err)
         })
