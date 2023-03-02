@@ -3,10 +3,10 @@
     <td>{{ poms.createdAt | date: 'dd.MM.yyyy'}}</td>
     <td><span class="semaphore"
         [ngClass]="{
-            'orange': poms.vigourMoodState > 8 && poms.vigourMoodState <= 12,
-            'red': poms.vigourMoodState > 12,
-            'green': poms.vigourMoodState <= 4,
-            'yellow': poms.vigourMoodState > 4 && poms.vigourMoodState <= 8
+            'yellow': poms.vigourMoodState > 8 && poms.vigourMoodState <= 12,
+            'green': poms.vigourMoodState > 12,
+            'red': poms.vigourMoodState <= 4,
+            'orange': poms.vigourMoodState > 4 && poms.vigourMoodState <= 8
         }" >
         {{ poms.vigourMoodState }}
         </span>
