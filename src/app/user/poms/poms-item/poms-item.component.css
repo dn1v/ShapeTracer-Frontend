@@ -1,0 +1,60 @@
+:host {
+    display: contents;
+    vertical-align: middle;
+}
+
+ion-icon {
+    color: #fff;
+}
+td, th {
+    padding: 0.5rem;
+    vertical-align: middle;
+    text-align: center ;
+    font-weight: bold;
+
+}
+
+tr {
+    border-bottom: none;
+    transition: background 0.3s linear;
+}
+
+tr:hover {
+    background-color: #f6f8f8;
+
+}
+
+
+
+button {
+    margin-right: 0.5rem;
+}
+
+
+.semaphore {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    padding: 1rem;
+    border-radius: 50%;
+    margin: 0 auto;
+
+}
+
+.red {
+    background-color: #e74c3c;
+}
+
+.yellow {
+    background-color: #f1c40f;
+}
+
+.green {
+    background-color: #2ecc71;
+}
+
+.orange {
+    background-color: #f39c12;
+}

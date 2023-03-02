@@ -1,0 +1,91 @@
+<tr>
+    <!-- <td  scope="row">{{ index + 1 }}</td> -->
+    <td>{{ poms.createdAt | date: 'dd.MM.yyyy'}}</td>
+    <td><span class="semaphore"
+        [ngClass]="{
+            'orange': poms.vigourMoodState > 8 && poms.vigourMoodState <= 12,
+            'red': poms.vigourMoodState > 12,
+            'green': poms.vigourMoodState <= 4,
+            'yellow': poms.vigourMoodState > 4 && poms.vigourMoodState <= 8
+        }" >
+        {{ poms.vigourMoodState }}
+        </span>
+    </td>
+    <td><span class="semaphore"
+        [ngClass]="{
+            'orange': poms.tensionMoodState > 8 && poms.tensionMoodState <= 12,
+            'red': poms.tensionMoodState > 12,
+            'green': poms.tensionMoodState <= 4,
+            'yellow': poms.tensionMoodState > 4 && poms.tensionMoodState <= 8
+        }" >
+        {{ poms.tensionMoodState }}
+        </span>
+    </td>
+    <td><span class="semaphore"
+        [ngClass]="{
+            'orange': poms.fatigueMoodState > 8 && poms.fatigueMoodState <= 12,
+            'red': poms.fatigueMoodState > 12,
+            'green': poms.fatigueMoodState <= 4,
+            'yellow': poms.fatigueMoodState > 4 && poms.fatigueMoodState <= 8
+        }" >
+        {{ poms.fatigueMoodState }}
+        </span>
+    </td>
+    <td><span class="semaphore"
+        [ngClass]="{
+            'orange': poms.depressionMoodState > 8 && poms.depressionMoodState <= 12,
+            'red': poms.depressionMoodState > 12,
+            'green': poms.depressionMoodState <= 4,
+            'yellow': poms.depressionMoodState > 4 && poms.depressionMoodState <= 8
+        }" >
+        {{ poms.depressionMoodState }}
+        </span>
+    </td>
+    <td><span class="semaphore"
+        [ngClass]="{
+            'orange': poms.confusionMoodState > 8 && poms.confusionMoodState <= 12,
+            'red': poms.confusionMoodState > 12,
+            'green': poms.confusionMoodState <= 4,
+            'yellow': poms.confusionMoodState > 4 && poms.confusionMoodState <= 8
+        }" >
+        {{ poms.confusionMoodState }}
+        </span>
+    </td>
+    <td><span class="semaphore"
+        [ngClass]="{
+            'orange': poms.angerMoodState > 8 && poms.angerMoodState <= 12,
+            'red': poms.angerMoodState > 12,
+            'green': poms.angerMoodState <= 4,
+            'yellow': poms.angerMoodState > 4 && poms.angerMoodState <= 8
+        }" >
+        {{ poms.angerMoodState }}
+        </span>
+    </td>
+    <td><span class="semaphore"
+        [ngClass]="{
+            'orange': poms.totalMoodScore > 64 && poms.totalMoodScore <= 80,
+            'red': poms.totalMoodScore > 80,
+            'green': poms.totalMoodScore <= 24,
+            'yellow': poms.totalMoodScore > 24 && poms.totalMoodScore <= 48
+        }" >
+        {{ poms.totalMoodScore }}
+        </span>
+    </td>
+    <!-- <td>{{ poms.vigourMoodState }}</td> -->
+    <!-- <td>{{ poms.tensionMoodState }}</td>
+    <td>{{ poms.fatigueMoodState }}</td>
+    <td>{{ poms.depressionMoodState }}</td>
+    <td>{{ poms.confusionMoodState }}</td>
+    <td>{{ poms.angerMoodState }}</td>
+    <td>{{ poms.totalMoodScore }}</td> -->
+    <td>
+        <button class="btn btn-dark" >
+            <ion-icon name="create-outline"></ion-icon>
+        </button>
+        <button (click)="onDelete()" class="btn btn-dark">
+            <ion-icon name="trash-outline"></ion-icon>
+        </button>
+    </td>
+</tr>
+
+

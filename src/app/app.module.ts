@@ -31,6 +31,7 @@ import { PaginationComponent } from './user/pagination/pagination.component';
 import { BodyMeasurementsModalComponent } from './user/body-measurements/body-measurements-modal/body-measurements-modal.component';
 import { BodyweightFormComponent } from './user/bodyweight/bodyweight-form/bodyweight-form.component';
 import { BodyweightItemComponent } from './user/bodyweight/bodyweight-item/bodyweight-item.component';
+import { PomsItemComponent } from './user/poms/poms-item/poms-item.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { BodyweightItemComponent } from './user/bodyweight/bodyweight-item/bodyw
     PaginationComponent,
     BodyMeasurementsModalComponent,
     BodyweightFormComponent,
-    BodyweightItemComponent
+    BodyweightItemComponent,
+    PomsItemComponent
   ],
   imports: [
     BrowserModule,
