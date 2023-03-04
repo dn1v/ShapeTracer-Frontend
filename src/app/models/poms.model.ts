@@ -36,76 +36,41 @@ export class POMS {
     totalMoodScore: number;
 
     constructor(obj?: any) {
-        this._id = obj && obj._id || null
+        this._id = obj && obj._id|| null
         this.owner = obj && obj.owner || null
         this.createdAt = obj && obj.createdAt || null
         this.updatedAt = obj && obj.updatedAt || null
-        this.angry = obj && obj.angry || null
-        this.annoyed = obj && obj.annoyed || null
-        this.badTempered = obj && obj.badTempered || null
-        this.bitter = obj && obj.bitter || null
-        this.confused = obj && obj.confused || null
-        this.mixedUp = obj && obj.mixedUp || null
-        this.muddled = obj && obj.muddled || null
-        this.uncertain = obj && obj.uncertain || null
-        this.depressed = obj && obj.depressed || null
-        this.downhearted = obj && obj.downhearted || null
-        this.miserable = obj && obj.miserable || null
-        this.unhappy = obj && obj.unhappy || null
-        this.exhausted = obj && obj.exhausted || null
-        this.sleepy = obj && obj.sleepy || null
-        this.tired = obj && obj.tired || null
-        this.wornOut = obj && obj.wornOut || null
-        this.anxious = obj && obj.anxious || null
-        this.nervous = obj && obj.nervous || null
-        this.panicky = obj && obj.panicky || null
-        this.worried = obj && obj.worried || null
-        this.active = obj && obj.active || null
-        this.alert = obj && obj.alert || null
-        this.energetic = obj && obj.energetic || null
-        this.lively = obj && obj.lively || null
-        this.vigourMoodState = obj && obj.vigourMoodState || null
-        this.tensionMoodState = obj && obj.tensionMoodState || null
-        this.fatigueMoodState = obj && obj.fatigueMoodState || null
-        this.depressionMoodState = obj && obj.depressionMoodState || null
-        this.confusionMoodState = obj && obj.confusionMoodState || null
-        this.angerMoodState = obj && obj.angerMoodState || null
-        this.totalMoodScore = obj && obj.totalMoodScore || null
+        this.angry = obj && obj.angry || 0
+        this.annoyed = obj && obj.annoyed || 0
+        this.badTempered = obj && obj.badTempered || 0
+        this.bitter = obj && obj.bitter || 0
+        this.confused = obj && obj.confused || 0
+        this.mixedUp = obj && obj.mixedUp || 0
+        this.muddled = obj && obj.muddled || 0
+        this.uncertain = obj && obj.uncertain || 0
+        this.depressed = obj && obj.depressed || 0
+        this.downhearted = obj && obj.downhearted || 0
+        this.miserable = obj && obj.miserable || 0
+        this.unhappy = obj && obj.unhappy || 0
+        this.exhausted = obj && obj.exhausted || 0
+        this.sleepy = obj && obj.sleepy || 0
+        this.tired = obj && obj.tired || 0
+        this.wornOut = obj && obj.wornOut || 0
+        this.anxious = obj && obj.anxious || 0
+        this.nervous = obj && obj.nervous || 0
+        this.panicky = obj && obj.panicky || 0
+        this.worried = obj && obj.worried || 0
+        this.active = obj && obj.active || 0
+        this.alert = obj && obj.alert || 0
+        this.energetic = obj && obj.energetic || 0
+        this.lively = obj && obj.lively || 0
+        this.vigourMoodState = obj && obj.vigourMoodState || 0
+        this.tensionMoodState = obj && obj.tensionMoodState || 0
+        this.fatigueMoodState = obj && obj.fatigueMoodState || 0
+        this.depressionMoodState = obj && obj.depressionMoodState || 0
+        this.confusionMoodState = obj && obj.confusionMoodState || 0
+        this.angerMoodState = obj && obj.angerMoodState || 0
+        this.totalMoodScore = obj && obj.totalMoodScore || 0
     }
 }
 
-    // _id: string;
-    // owner: string;
-    // createdAt: Date;
-    // updatedAt: Date;
-    // "angry": 2,
-    // "annoyed": 2, 
-    // "badTempered": 2,
-    // "bitter": 2,
-    // "confused": 2,    
-    // "mixedUp": 2,
-    // "muddled": 2,
-    // "uncertain": 2,
-    // "depressed": 2,
-    // "downhearted": 2,
-    // "miserable": 2,
-    // "unhappy": 2,
-    // "exhausted": 2,
-    // "sleepy": 2,
-    // "tired": 2,
-    // "wornOut": 2,
-    // "anxious": 2,
-    // "nervous": 2,
-    // "panicky": 2,
-    // "worried": 2,
-    // "active": 2,
-    // "alert": 2,
-    // "energetic": 2,
-    // "lively": 2,
-    // vigourMoodState: number;
-    // tensionMoodState: number;
-    // fatigueMoodState: number;
-    // depressionMoodState: number;
-    // confusionMoodState: number;
-    // angerMoodState: number;
-    // totalMoodScore: number;

@@ -1,3 +1,14 @@
 .width {
     width: 95%
 }
+ion-icon[name='add-circle-outline'] {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}

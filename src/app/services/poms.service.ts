@@ -18,6 +18,24 @@ export class PomsService {
                 map((data: any) => data && data.map((data: any) => data && new POMS(data))))
     }
 
+    getOne(_id: string): Observable<POMS> {
+        return this.http.get(`${this.BASE_URL}/${_id}`)
+            .pipe(
+                map((data: any) => data && new POMS(data)))
+    }
+
+    editPOMS(_id: string, obj: any): Observable<POMS> {
+        return this.http.patch(`${this.BASE_URL}/${_id}`, obj)
+            .pipe(
+                map((data: any) => data && new POMS(data)))
+    }
+
+    postPOMS(obj: any): Observable<POMS> {
+        return this.http.post(this.BASE_URL, obj)
+            .pipe(
+                map((data: any) => data && new POMS(data)))
+    }
+
     deletePOMS(_id: string): Observable<POMS> {
         return this.http.delete(`${this.BASE_URL}/${_id}`)
             .pipe(

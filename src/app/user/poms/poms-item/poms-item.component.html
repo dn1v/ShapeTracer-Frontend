@@ -71,15 +71,8 @@
         {{ poms.totalMoodScore }}
         </span>
     </td>
-    <!-- <td>{{ poms.vigourMoodState }}</td> -->
-    <!-- <td>{{ poms.tensionMoodState }}</td>
-    <td>{{ poms.fatigueMoodState }}</td>
-    <td>{{ poms.depressionMoodState }}</td>
-    <td>{{ poms.confusionMoodState }}</td>
-    <td>{{ poms.angerMoodState }}</td>
-    <td>{{ poms.totalMoodScore }}</td> -->
     <td>
-        <button class="btn btn-dark" >
+        <button (click)="open()" class="btn btn-dark" >
             <ion-icon name="create-outline"></ion-icon>
         </button>
         <button (click)="onDelete()" class="btn btn-dark">

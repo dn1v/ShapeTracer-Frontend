@@ -3,7 +3,8 @@ import { FilterParamsPOMS } from 'src/app/models/filterParamsPOMS.model';
 import { POMS } from 'src/app/models/poms.model';
 import { PomsService } from 'src/app/services/poms.service';
 import { FilterOptions } from 'src/app/models/filterOptions.model';
-import { filter } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PomsModalComponent } from './poms-modal/poms-modal.component';
 
 @Component({
   selector: 'app-poms',
@@ -44,7 +45,7 @@ export class POMSComponent implements OnInit {
         {value: 'totalMoodScore', description: 'Total'},
     ]
 
-    constructor(private service: PomsService) {}
+    constructor(private service: PomsService, private modalService: NgbModal) {}
 
     ngOnInit(): void {
         this.getListPOMS()
@@ -73,6 +74,11 @@ export class POMSComponent implements OnInit {
         this.params.skip = page
         this.getListPOMS()
     }
+
+    open() {
+		const modalRef = this.modalService.open(PomsModalComponent);
+
+	}
 
     onFilterFormSubmit(filterData: any): void {
 

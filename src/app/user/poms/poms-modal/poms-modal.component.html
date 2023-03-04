@@ -1,0 +1,26 @@
+<form [formGroup]="form" class="form">
+    <div *ngFor="let control of form.controls | keyvalue">
+        <h2>{{ control.key | titlecase }}:</h2>
+        <div class="switch-field">
+          <input formControlName="{{ control.key }}" type="radio" id="{{ control.key }}-0" name="{{ control.key }}" value=0 />
+          <label for="{{ control.key }}-0">Not at all</label>
+          <input formControlName="{{ control.key }}" type="radio" id="{{ control.key }}-1" name="{{ control.key }}" value=1 />
+          <label for="{{ control.key }}-1">A little</label>
+          <input formControlName="{{ control.key }}" type="radio" id="{{ control.key }}-2" name="{{ control.key }}" value=2 />
+          <label for="{{ control.key }}-2">Moderately</label>
+          <input formControlName="{{ control.key }}" type="radio" id="{{ control.key }}-3" name="{{ control.key }}" value=3 />
+          <label for="{{ control.key }}-3">Quite a bit</label>
+          <input formControlName="{{ control.key }}" type="radio" id="{{ control.key }}-4" name="{{ control.key }}" value=4 />
+          <label for="{{ control.key }}-4">Extremely</label>
+        </div>
+      </div>
+      <div class="btn-box d-flex justify-content-center g-2">
+        <button class="btn bg-dark col-5 mx-2"  (click)="activeModal.close('Close click')" (click)="onSubmit()">
+            <ion-icon name="checkmark-outline"></ion-icon>
+        </button>
+        <button class="btn bg-dark col-5 mx-2" (click)="activeModal.dismiss('Dismiss click')">
+            <ion-icon name="close-outline"></ion-icon>
+        </button>
+    </div>
+  </form>
+  <!-- [routerLink]="['user/POMS', 'submited']" -->

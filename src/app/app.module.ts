@@ -32,6 +32,7 @@ import { BodyMeasurementsModalComponent } from './user/body-measurements/body-me
 import { BodyweightFormComponent } from './user/bodyweight/bodyweight-form/bodyweight-form.component';
 import { BodyweightItemComponent } from './user/bodyweight/bodyweight-item/bodyweight-item.component';
 import { PomsItemComponent } from './user/poms/poms-item/poms-item.component';
+import { PomsModalComponent } from './user/poms/poms-modal/poms-modal.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { PomsItemComponent } from './user/poms/poms-item/poms-item.component';
     BodyMeasurementsModalComponent,
     BodyweightFormComponent,
     BodyweightItemComponent,
-    PomsItemComponent
+    PomsItemComponent,
+    PomsModalComponent
   ],
   imports: [
     BrowserModule,

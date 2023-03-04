@@ -20,6 +20,7 @@ const routes: Routes = [
         { path: 'sRPE', component: SessionRpeComponent },
         { path: 'sRPE/edited', component: SessionRpeComponent},
         { path: 'POMS', component: POMSComponent },
+        { path: 'POMS/submited', component: POMSComponent },
         { path: 'bodyMeasurements', component: BodyMeasurementsComponent },
         { path: 'bodyMeasurements/submited', component: BodyMeasurementsComponent},
         { path: 'bodyweight', component: BodyweightComponent },

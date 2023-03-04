@@ -114,21 +114,22 @@
                     </div>
                 </div>
             </th>
-            <th scope="col"></th>
+            <th scope="col">
+                <div class="th-box"> 
+                    <button (click)="open()" style="width: 100%;" class="btn btn-dark">
+                        <ion-icon name="add-circle-outline"></ion-icon>
+                        New
+                    </button>
+                </div>
+            </th>
           </tr>
         </thead>
         <tbody>
-            <!-- <app-session-rpe-item
-                *ngFor="let sessionRPE of sessionRPEs; let i = index"
-                [sessionRPE]="sessionRPE"
-                [index]="i + (this.params.limit * this.params.skip)"
-                (srpeDeleted)="onSrpeDeleted()">
-            </app-session-rpe-item> -->
-
             <app-poms-item 
                 *ngFor="let poms of pomsList" 
                 [poms]="poms"
-                (pomsDeleted)="onPomsDeleted()"></app-poms-item>
+                (pomsDeleted)="onPomsDeleted()">
+            </app-poms-item>
         </tbody>
       </table>
 </div>
