@@ -7,8 +7,16 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AthleteService {
 
-    private baseUrl = 'http://localhost:3000/athletes'
+
+
+
+    private readonly BASE_URL = 'http://localhost:3000/athletes'
 
     constructor(private http: HttpClient) { }
+
+    getImage(_id: string): Observable<Blob> {
+        return this.http.get(`${this.BASE_URL}/${_id}/profilePic`, { responseType: 'blob' });
+      }
+
 
 }

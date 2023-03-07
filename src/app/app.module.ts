@@ -35,6 +35,7 @@ import { PomsItemComponent } from './user/poms/poms-item/poms-item.component';
 import { PomsModalComponent } from './user/poms/poms-modal/poms-modal.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +62,7 @@ import { PomsModalComponent } from './user/poms/poms-modal/poms-modal.component'
     BodyweightFormComponent,
     BodyweightItemComponent,
     PomsItemComponent,
-    PomsModalComponent
+    PomsModalComponent,
   ],
   imports: [
     BrowserModule,
