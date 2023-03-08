@@ -11,7 +11,7 @@
 }
 
 img {
-    width: 150px;
+    width: 350px;
     border-radius: 50%;
 }
 
@@ -23,8 +23,9 @@ button, button:hover {
 }
 
 .img-box {
-    width: 150px;
+    width: 350px;
     border-radius: 50%;
+    align-self: flex-start;
 }
 
 
@@ -33,13 +34,13 @@ ul {
   
     list-style: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     flex-direction: column;
     margin: 0;
     padding: 0;
-    font-size: 2rem;
-    gap: 1rem;
+    font-size: 1.5rem;
+    /* gap: 1rem; */
 
 }
 
@@ -51,10 +52,10 @@ ul {
 
 div {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: 80%;
     gap: 2rem;
 }
 
@@ -63,3 +64,16 @@ div {
     width: 100%;
 }
 
+.forms-box {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: stretch;
+    gap: 2rem;
+}
+
+app-password-change {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}

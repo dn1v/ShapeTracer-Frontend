@@ -13,7 +13,7 @@ export class AthleteProfileComponent implements OnInit {
     profilePhoto: any = ''
     imageToShow: any;
     imageLoading: boolean = true
-
+    displayPasswordChange: boolean = false
     user: AuthResponse = new AuthResponse()
 
     constructor(private service: AthleteService, private authService: AuthService) {}
@@ -46,6 +46,13 @@ export class AthleteProfileComponent implements OnInit {
           this.imageLoading = false;
           console.log(error);
         });
-  }
+    }
 
+    onPasswordChange(): void {
+        this.displayPasswordChange = true
+    }
+
+    onCancelChange(cancel: boolean): void {
+        this.displayPasswordChange = cancel
+    }
 }
