@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { AthleteService } from 'src/app/services/athlete.service';
+import { Athlete } from 'src/app/models/athlete.model';
 @Component({
   selector: 'app-password-change',
   templateUrl: './password-change.component.html',
@@ -16,7 +17,7 @@ export class PasswordChangeComponent implements OnInit {
 
     @Output() cancelChange: EventEmitter<boolean> = new EventEmitter()
 
-    constructor() {}
+    constructor(private service: AthleteService) {}
 
     ngOnInit(): void {
         
@@ -39,7 +40,14 @@ export class PasswordChangeComponent implements OnInit {
     }
 
     onSubmit(): void {
-
+        let password = { password: this.newPassword?.value }
+        this.service.changePassword(password).subscribe({
+            next: (athlete: Athlete) => {
+                console.log('Edited!')
+                console.log(athlete)
+            },
+            error: (err: any) => console.log(err)
+        })
     }
 
     onCancel(): void {

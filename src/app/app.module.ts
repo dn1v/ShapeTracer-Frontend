@@ -34,6 +34,7 @@ import { BodyweightItemComponent } from './user/bodyweight/bodyweight-item/bodyw
 import { PomsItemComponent } from './user/poms/poms-item/poms-item.component';
 import { PomsModalComponent } from './user/poms/poms-modal/poms-modal.component';
 import { PasswordChangeComponent } from './user/athlete-profile/password-change/password-change.component';
+import { EditAthleteComponent } from './user/athlete-profile/edit-athlete/edit-athlete.component';
 
 
 
@@ -65,6 +66,7 @@ import { PasswordChangeComponent } from './user/athlete-profile/password-change/
     PomsItemComponent,
     PomsModalComponent,
     PasswordChangeComponent,
+    EditAthleteComponent,
   ],
   imports: [
     BrowserModule,

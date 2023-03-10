@@ -49,10 +49,13 @@ export class AthleteProfileComponent implements OnInit {
     }
 
     onPasswordChange(): void {
+
         this.displayPasswordChange = true
     }
 
     onCancelChange(cancel: boolean): void {
         this.displayPasswordChange = cancel
     }
+
+
 }
