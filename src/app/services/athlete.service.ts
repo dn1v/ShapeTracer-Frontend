@@ -12,6 +12,10 @@ export class AthleteService {
 
     constructor(private http: HttpClient) { }
 
+    getAthlete(): Observable<Athlete> {
+        return this.http.get(`${this.BASE_URL}/me`).pipe(map((data: any) => data && new Athlete(data)))
+    }
+
     getImage(_id: string): Observable<Blob> {
         return this.http.get(`${this.BASE_URL}/${_id}/profilePic`, { responseType: 'blob' });
     }
@@ -20,6 +24,8 @@ export class AthleteService {
         return this.http.patch(`${this.BASE_URL}/me`, obj).pipe(map((data: any) => data && new Athlete(data.athlete)))
     }
 
-    
+    editAthlete(obj?:any): Observable<Athlete> {
+        return this.http.patch(`${this.BASE_URL}/me`, obj).pipe(map((data: any) => data && new Athlete(data.athlete)))
+    }
     
 }

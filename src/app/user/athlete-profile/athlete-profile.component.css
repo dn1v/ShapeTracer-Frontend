@@ -60,6 +60,7 @@ div {
 }
 
 .btn-box {
+    
     flex-direction: row;
     width: 100%;
 }
@@ -68,12 +69,13 @@ div {
     width: 80%;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     
     gap: 2rem;
 }
 
 app-password-change {
-    width: 50%;
+    width: 100%;
     margin: 0;
     padding: 0;
 }

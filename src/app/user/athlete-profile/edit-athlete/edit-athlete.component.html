@@ -1,1 +1,29 @@
-<p>edit-athlete works!</p>
+
+<form [formGroup]="form" class="box-border">
+    <div class="input-box">
+        <input formControlName="firstName" type="text" placeholder="First name">
+    </div>
+    <div class="input-box">
+        <input formControlName="lastName" type="text" placeholder="Last name">
+
+    </div>
+    <div class="input-box">
+        <input formControlName="height" type="text" placeholder="Height">
+    </div>
+    <div class="input-box">
+        <input formControlName="weight" type="text" placeholder="Weight">
+
+    </div>
+    <div class="input-box">
+        <input formControlName="age" type="text" placeholder="age">
+    </div>
+    <div class="btn-box d-flex justify-content-center g-2">
+        <button (click)="onEdit()" [disabled]="form.invalid" class="btn bg-dark col-5 mx-2">
+            <ion-icon name="checkmark-outline"></ion-icon>
+        </button>
+        <button (click)="onCancel()" class="btn bg-dark col-5 mx-2">
+            <ion-icon name="close-outline"></ion-icon>
+        </button>
+    </div>
+</form>
+

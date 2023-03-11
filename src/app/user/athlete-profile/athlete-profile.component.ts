@@ -14,6 +14,7 @@ export class AthleteProfileComponent implements OnInit {
     imageToShow: any;
     imageLoading: boolean = true
     displayPasswordChange: boolean = false
+    displayEditAthlete: boolean = false
     user: AuthResponse = new AuthResponse()
 
     constructor(private service: AthleteService, private authService: AuthService) {}
@@ -57,5 +58,12 @@ export class AthleteProfileComponent implements OnInit {
         this.displayPasswordChange = cancel
     }
 
+    onEditAthlete(): void {
+        this.displayEditAthlete = true
+    }
+
+    onCancelEdit(cancel: boolean): void {
+        this.displayEditAthlete = cancel
+    } 
 
 }

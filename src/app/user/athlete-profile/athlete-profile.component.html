@@ -1,4 +1,3 @@
-
 <div class="box-border">
     <div class="img-box">
         <img *ngIf="imageLoading" src="../../../assets/userAvatar.png" alt="">
@@ -14,11 +13,12 @@
         </ul>
     </div>
     <div class="btn-box">
-        <button class="btn bg-dark">Edit</button>
+        <button (click)="onEditAthlete()" class="btn bg-dark">Edit</button>
         <button (click)="onPasswordChange()" class="btn bg-dark">Change password</button>
     </div>
 </div>
 <div class="forms-box">
+    <app-edit-athlete *ngIf="displayEditAthlete" (closeEdit)="onCancelEdit($event)"></app-edit-athlete>
     <app-password-change *ngIf="displayPasswordChange" (cancelChange)="onCancelChange($event)"></app-password-change>
 </div>
 
