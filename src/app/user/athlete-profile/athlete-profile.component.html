@@ -1,26 +1,29 @@
-<div class="box-border">
-    <div class="img-box">
-        <img *ngIf="imageLoading" src="../../../assets/userAvatar.png" alt="">
-        <img *ngIf="!imageLoading" [src]="imageToShow" alt="">
+<div class="athlete-container fade-in">
+    <div class="box-border">
+        <div class="img-box">
+            <img *ngIf="imageLoading" src="../../../assets/userAvatar.png" alt="">
+            <img *ngIf="!imageLoading" [src]="imageToShow" alt="">
+    
+        </div>
+        <div class="info-box">
+            <ul>
+                <li>{{user.athlete.firstName}} {{user.athlete.lastName}}</li>
+                <li>{{user.athlete.email}}</li>
+                <li>{{user.athlete.height}} cm</li>
+                <li>{{user.athlete.weight}} kg</li>
+            </ul>
+        </div>
+        <div class="btn-box">
+            <button (click)="onEditAthlete()" class="btn bg-dark">Edit</button>
+            <button (click)="onPasswordChange()" class="btn bg-dark">Change password</button>
+        </div>
+    </div>
+    <div class="forms-box">
+        <app-edit-athlete class="appear" *ngIf="displayEditAthlete" (closeEdit)="onCancelEdit($event)"></app-edit-athlete>
+        <app-password-change class="appear" *ngIf="displayPasswordChange" (cancelChange)="onCancelChange($event)"></app-password-change>
+    </div>
+</div>
 
-    </div>
-    <div class="info-box">
-        <ul>
-            <li>{{user.athlete.firstName}} {{user.athlete.lastName}}</li>
-            <li>{{user.athlete.email}}</li>
-            <li>{{user.athlete.height}} cm</li>
-            <li>{{user.athlete.weight}} kg</li>
-        </ul>
-    </div>
-    <div class="btn-box">
-        <button (click)="onEditAthlete()" class="btn bg-dark">Edit</button>
-        <button (click)="onPasswordChange()" class="btn bg-dark">Change password</button>
-    </div>
-</div>
-<div class="forms-box">
-    <app-edit-athlete *ngIf="displayEditAthlete" (closeEdit)="onCancelEdit($event)"></app-edit-athlete>
-    <app-password-change *ngIf="displayPasswordChange" (cancelChange)="onCancelChange($event)"></app-password-change>
-</div>
 
 
 

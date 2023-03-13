@@ -79,3 +79,8 @@ app-password-change {
     margin: 0;
     padding: 0;
 }
+
+.athlete-container {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,143 +1,145 @@
-<div class="row box-border">
-    <app-filter
-        [rangeOptions]="rangeOptions"
-        [filterByOptions]="filterByOptions"
-        (filterFormSubmit)="onFilterFormSubmit($event)">
-    </app-filter>
-</div>
-<div  class="row box-border">
-    <table class="table pb-3" *ngIf="pomsList.length">
-        <thead>
-          <tr>
-            <!-- <th scope="col">#</th> -->
-            <th scope="col">
-                <div class="th-box">
-                    <p>Date</p>
-                    <div class="sort-btns">
-                        <button (click)="sortBy('createdAt:desc')">
-                            <ion-icon name="caret-up-outline"></ion-icon>
-                        </button>
-                        <button (click)="sortBy('createdAt:asc')">
-                            <ion-icon name="caret-down-outline"></ion-icon>
+<div class="poms-container fade-in">
+    <div class="row box-border">
+        <app-filter
+            [rangeOptions]="rangeOptions"
+            [filterByOptions]="filterByOptions"
+            (filterFormSubmit)="onFilterFormSubmit($event)">
+        </app-filter>
+    </div>
+    <div  class="row box-border">
+        <table class="table pb-3" *ngIf="pomsList.length">
+            <thead>
+              <tr>
+                <!-- <th scope="col">#</th> -->
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Date</p>
+                        <div class="sort-btns">
+                            <button (click)="sortBy('createdAt:desc')">
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button (click)="sortBy('createdAt:asc')">
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Vigour</p>
+                        <div class="sort-btns">
+                            <button (click)="sortBy('vigourMoodState:desc')">
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button (click)="sortBy('vigourMoodState:asc')">
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Tension</p>
+                        <div class="sort-btns">
+                            <button (click)="sortBy('tensionMoodState:desc')">
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button (click)="sortBy('tensionMoodState:asc')">
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Fatigue</p>
+                        <div class="sort-btns">
+                            <button (click)="sortBy('fatigueMoodState:desc')">
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button (click)="sortBy('fatigueMoodState:asc')">
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Depression</p>
+                        <div class="sort-btns">
+                            <button (click)="sortBy('depressionMoodState:desc')">
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button (click)="sortBy('depressionMoodState:asc')">
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Confusion</p>
+                        <div class="sort-btns">
+                            <button (click)="sortBy('confusionMoodState:desc')">
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button (click)="sortBy('confusionMoodState:asc')">
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Anger</p>
+                        <div class="sort-btns">
+                            <button (click)="sortBy('angerMoodState:desc')">
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button (click)="sortBy('angerMoodState:asc')">
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box">
+                        <p>Total</p>
+                        <div class="sort-btns">
+                            <button (click)="sortBy('totalMoodScore:desc')">
+                                <ion-icon name="caret-up-outline"></ion-icon>
+                            </button>
+                            <button (click)="sortBy('totalMoodScore:asc')">
+                                <ion-icon name="caret-down-outline"></ion-icon>
+                            </button>
+                        </div>
+                    </div>
+                </th>
+                <th scope="col">
+                    <div class="th-box"> 
+                        <button (click)="open()" style="width: 100%;" class="btn btn-dark">
+                            <ion-icon name="add-circle-outline"></ion-icon>
+                            New
                         </button>
                     </div>
-                </div>
-            </th>
-            <th scope="col">
-                <div class="th-box">
-                    <p>Vigour</p>
-                    <div class="sort-btns">
-                        <button (click)="sortBy('vigourMoodState:desc')">
-                            <ion-icon name="caret-up-outline"></ion-icon>
-                        </button>
-                        <button (click)="sortBy('vigourMoodState:asc')">
-                            <ion-icon name="caret-down-outline"></ion-icon>
-                        </button>
-                    </div>
-                </div>
-            </th>
-            <th scope="col">
-                <div class="th-box">
-                    <p>Tension</p>
-                    <div class="sort-btns">
-                        <button (click)="sortBy('tensionMoodState:desc')">
-                            <ion-icon name="caret-up-outline"></ion-icon>
-                        </button>
-                        <button (click)="sortBy('tensionMoodState:asc')">
-                            <ion-icon name="caret-down-outline"></ion-icon>
-                        </button>
-                    </div>
-                </div>
-            </th>
-            <th scope="col">
-                <div class="th-box">
-                    <p>Fatigue</p>
-                    <div class="sort-btns">
-                        <button (click)="sortBy('fatigueMoodState:desc')">
-                            <ion-icon name="caret-up-outline"></ion-icon>
-                        </button>
-                        <button (click)="sortBy('fatigueMoodState:asc')">
-                            <ion-icon name="caret-down-outline"></ion-icon>
-                        </button>
-                    </div>
-                </div>
-            </th>
-            <th scope="col">
-                <div class="th-box">
-                    <p>Depression</p>
-                    <div class="sort-btns">
-                        <button (click)="sortBy('depressionMoodState:desc')">
-                            <ion-icon name="caret-up-outline"></ion-icon>
-                        </button>
-                        <button (click)="sortBy('depressionMoodState:asc')">
-                            <ion-icon name="caret-down-outline"></ion-icon>
-                        </button>
-                    </div>
-                </div>
-            </th>
-            <th scope="col">
-                <div class="th-box">
-                    <p>Confusion</p>
-                    <div class="sort-btns">
-                        <button (click)="sortBy('confusionMoodState:desc')">
-                            <ion-icon name="caret-up-outline"></ion-icon>
-                        </button>
-                        <button (click)="sortBy('confusionMoodState:asc')">
-                            <ion-icon name="caret-down-outline"></ion-icon>
-                        </button>
-                    </div>
-                </div>
-            </th>
-            <th scope="col">
-                <div class="th-box">
-                    <p>Anger</p>
-                    <div class="sort-btns">
-                        <button (click)="sortBy('angerMoodState:desc')">
-                            <ion-icon name="caret-up-outline"></ion-icon>
-                        </button>
-                        <button (click)="sortBy('angerMoodState:asc')">
-                            <ion-icon name="caret-down-outline"></ion-icon>
-                        </button>
-                    </div>
-                </div>
-            </th>
-            <th scope="col">
-                <div class="th-box">
-                    <p>Total</p>
-                    <div class="sort-btns">
-                        <button (click)="sortBy('totalMoodScore:desc')">
-                            <ion-icon name="caret-up-outline"></ion-icon>
-                        </button>
-                        <button (click)="sortBy('totalMoodScore:asc')">
-                            <ion-icon name="caret-down-outline"></ion-icon>
-                        </button>
-                    </div>
-                </div>
-            </th>
-            <th scope="col">
-                <div class="th-box"> 
-                    <button (click)="open()" style="width: 100%;" class="btn btn-dark">
-                        <ion-icon name="add-circle-outline"></ion-icon>
-                        New
-                    </button>
-                </div>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-            <app-poms-item 
-                *ngFor="let poms of pomsList" 
-                [poms]="poms"
-                (pomsDeleted)="onPomsDeleted()">
-            </app-poms-item>
-        </tbody>
-      </table>
-</div>
-<div class="row">
-    <app-pagination
-        [limit]="params.limit"
-        [listLength]="pomsList.length"
-        [page]="params.skip"
-        (pageChange)="onPageChange($event)">
-    </app-pagination>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+                <app-poms-item 
+                    *ngFor="let poms of pomsList" 
+                    [poms]="poms"
+                    (pomsDeleted)="onPomsDeleted()">
+                </app-poms-item>
+            </tbody>
+          </table>
+    </div>
+    <div class="row">
+        <app-pagination
+            [limit]="params.limit"
+            [listLength]="pomsList.length"
+            [page]="params.skip"
+            (pageChange)="onPageChange($event)">
+        </app-pagination>
+    </div>
 </div>

@@ -1,204 +1,199 @@
-<div class="row box-border width">
-    <app-filter
-        [rangeOptions]="rangeOptions"
-        [filterByOptions]="filterByOptions"
-        (filterFormSubmit)="onFilterFormSubmit($event)">
-    </app-filter>
-</div>
-<div class="row box-border width">
-    <div  class="row">
-        <table class="table pb-3" >
-            <thead>
-              <tr>
-             <!-- <th scope="col">#</th> -->
-                <th scope="col">
-                    <div class="th-box">
-                        <p>Date</p>
-                        <div class="sort-btns">
-                            <button (click)="sortBy('createdAt:asc')">
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button (click)="sortBy('createdAt:desc')">
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                </th>
-                <th scope="col">
-                    <div class="th-box">
-                        <p>Chest</p>
-                        <div class="sort-btns">
-                            <button (click)="sortBy('chest:asc')">
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button (click)="sortBy('chest:desc')">
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                </th>
-                <th scope="col">
-                    <div class="th-box">
-                        <p>Right arm</p>
-                        <div class="sort-btns">
-                            <button (click)="sortBy('rigthArm:asc')">
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button (click)="sortBy('rightArm:desc')">
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                </th>
-                <th scope="col">
-                    <div class="th-box">
-                        <p>Left arm</p>
-                        <div class="sort-btns">
-                            <button (click)="sortBy('leftArm:asc')">
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button (click)="sortBy('leftArm:desc')">
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                </th>
-                <th scope="col">
-                    <div class="th-box">
-                        <p>Above navel</p>
-                        <div class="sort-btns">
-                            <button (click)="sortBy('aboveNavel:asc')">
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button (click)="sortBy('aboveNavel:desc')">
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                </th>
-                <th scope="col">
-                    <div class="th-box">
-                        <p>Navel</p>
-                        <div class="sort-btns">
-                            <button (click)="sortBy('navel:asc')">
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button (click)="sortBy('navel:desc')">
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                </th>
-                <th scope="col">
-                    <div class="th-box">
-                        <p>Below navel</p>
-                        <div class="sort-btns">
-                            <button (click)="sortBy('belowNavel:asc')">
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button (click)="sortBy('belowNavel:desc')">
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                </th>
-                 <th scope="col">
-                    <div class="th-box">
-                        <p>Hips</p>
-                        <div class="sort-btns">
-                            <button (click)="sortBy('hips:asc')">
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button (click)="sortBy('hips:desc')">
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                </th>
-                <th scope="col">
-                    <div class="th-box">
-                        <p>Right thigh</p>
-                        <div class="sort-btns">
-                            <button (click)="sortBy('rightThigh:asc')">
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button (click)="sortBy('rightThigh:desc')">
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                </th>
-                <th scope="col">
-                    <div class="th-box">
-                        <p>Left thigh</p>
-                        <div class="sort-btns">
-                            <button (click)="sortBy('leftThigh:asc')">
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button (click)="sortBy('leftThigh:desc')">
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                </th>
-                <th scope="col">
-                    <div class="th-box">
-                        <p>Right calf</p>
-                        <div class="sort-btns">
-                            <button (click)="sortBy('rightCalf:asc')">
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button (click)="sortBy('rightCalf:desc')">
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                </th>
-                <th scope="col">
-                    <div class="th-box">
-                        <p>Left calf</p>
-                        <div class="sort-btns">
-                            <button (click)="sortBy('leftCalf:asc')">
-                                <ion-icon name="caret-up-outline"></ion-icon>
-                            </button>
-                            <button (click)="sortBy('leftCalf:desc')">
-                                <ion-icon name="caret-down-outline"></ion-icon>
-                            </button>
-                        </div>
-                    </div>
-                </th>
-                <th scope="col">
-                    <div class="th-box"> 
-                        <button (click)="open()" style="width: 100%;" class="btn btn-dark">
-                            <ion-icon name="add-circle-outline"></ion-icon>
-                            New
-                        </button>
-                    </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-                <!-- <app-session-rpe-item
-                    *ngFor="let sessionRPE of sessionRPEs; let i = index"
-                    [sessionRPE]="sessionRPE"
-                    [index]="i + (this.params.limit * this.params.skip)"
-                    (srpeDeleted)="onSrpeDeleted()">
-                </app-session-rpe-item> -->
-
-                <app-body-measurements-item
-                    *ngFor="let item of bodyMeasurementsList; let index = index"
-                    [bodyMeasurements]="item"
-                    [index]="index"
-                    (bodyMeasurementDeleted)="onBodyMeasurementDeleted()">
-                </app-body-measurements-item>
-            </tbody>
-          </table>
+<div class="bm-container fade-in">
+    <div class="row box-border width">
+        <app-filter
+            [rangeOptions]="rangeOptions"
+            [filterByOptions]="filterByOptions"
+            (filterFormSubmit)="onFilterFormSubmit($event)">
+        </app-filter>
     </div>
-</div>
-<div class="row">
-    <app-pagination
-        [limit]="params.limit"
-        [listLength]="bodyMeasurementsList.length"
-        [page]="params.skip"
-        (pageChange)="onChangePage($event)"></app-pagination>
+    <div class="row box-border width">
+        <div  class="row">
+            <table class="table pb-3" >
+                <thead>
+                  <tr>
+                 <!-- <th scope="col">#</th> -->
+                    <th scope="col">
+                        <div class="th-box">
+                            <p>Date</p>
+                            <div class="sort-btns">
+                                <button (click)="sortBy('createdAt:asc')">
+                                    <ion-icon name="caret-up-outline"></ion-icon>
+                                </button>
+                                <button (click)="sortBy('createdAt:desc')">
+                                    <ion-icon name="caret-down-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-box">
+                            <p>Chest</p>
+                            <div class="sort-btns">
+                                <button (click)="sortBy('chest:asc')">
+                                    <ion-icon name="caret-up-outline"></ion-icon>
+                                </button>
+                                <button (click)="sortBy('chest:desc')">
+                                    <ion-icon name="caret-down-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-box">
+                            <p>Right arm</p>
+                            <div class="sort-btns">
+                                <button (click)="sortBy('rigthArm:asc')">
+                                    <ion-icon name="caret-up-outline"></ion-icon>
+                                </button>
+                                <button (click)="sortBy('rightArm:desc')">
+                                    <ion-icon name="caret-down-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-box">
+                            <p>Left arm</p>
+                            <div class="sort-btns">
+                                <button (click)="sortBy('leftArm:asc')">
+                                    <ion-icon name="caret-up-outline"></ion-icon>
+                                </button>
+                                <button (click)="sortBy('leftArm:desc')">
+                                    <ion-icon name="caret-down-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-box">
+                            <p>Above navel</p>
+                            <div class="sort-btns">
+                                <button (click)="sortBy('aboveNavel:asc')">
+                                    <ion-icon name="caret-up-outline"></ion-icon>
+                                </button>
+                                <button (click)="sortBy('aboveNavel:desc')">
+                                    <ion-icon name="caret-down-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-box">
+                            <p>Navel</p>
+                            <div class="sort-btns">
+                                <button (click)="sortBy('navel:asc')">
+                                    <ion-icon name="caret-up-outline"></ion-icon>
+                                </button>
+                                <button (click)="sortBy('navel:desc')">
+                                    <ion-icon name="caret-down-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-box">
+                            <p>Below navel</p>
+                            <div class="sort-btns">
+                                <button (click)="sortBy('belowNavel:asc')">
+                                    <ion-icon name="caret-up-outline"></ion-icon>
+                                </button>
+                                <button (click)="sortBy('belowNavel:desc')">
+                                    <ion-icon name="caret-down-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </th>
+                     <th scope="col">
+                        <div class="th-box">
+                            <p>Hips</p>
+                            <div class="sort-btns">
+                                <button (click)="sortBy('hips:asc')">
+                                    <ion-icon name="caret-up-outline"></ion-icon>
+                                </button>
+                                <button (click)="sortBy('hips:desc')">
+                                    <ion-icon name="caret-down-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-box">
+                            <p>Right thigh</p>
+                            <div class="sort-btns">
+                                <button (click)="sortBy('rightThigh:asc')">
+                                    <ion-icon name="caret-up-outline"></ion-icon>
+                                </button>
+                                <button (click)="sortBy('rightThigh:desc')">
+                                    <ion-icon name="caret-down-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-box">
+                            <p>Left thigh</p>
+                            <div class="sort-btns">
+                                <button (click)="sortBy('leftThigh:asc')">
+                                    <ion-icon name="caret-up-outline"></ion-icon>
+                                </button>
+                                <button (click)="sortBy('leftThigh:desc')">
+                                    <ion-icon name="caret-down-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-box">
+                            <p>Right calf</p>
+                            <div class="sort-btns">
+                                <button (click)="sortBy('rightCalf:asc')">
+                                    <ion-icon name="caret-up-outline"></ion-icon>
+                                </button>
+                                <button (click)="sortBy('rightCalf:desc')">
+                                    <ion-icon name="caret-down-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-box">
+                            <p>Left calf</p>
+                            <div class="sort-btns">
+                                <button (click)="sortBy('leftCalf:asc')">
+                                    <ion-icon name="caret-up-outline"></ion-icon>
+                                </button>
+                                <button (click)="sortBy('leftCalf:desc')">
+                                    <ion-icon name="caret-down-outline"></ion-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="th-box"> 
+                            <button (click)="open()" style="width: 100%;" class="btn btn-dark">
+                                <ion-icon name="add-circle-outline"></ion-icon>
+                                New
+                            </button>
+                        </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <app-body-measurements-item
+                        *ngFor="let item of bodyMeasurementsList; let index = index"
+                        [bodyMeasurements]="item"
+                        [index]="index"
+                        (bodyMeasurementDeleted)="onBodyMeasurementDeleted()">
+                    </app-body-measurements-item>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    <div class="row">
+        <app-pagination
+            [limit]="params.limit"
+            [listLength]="bodyMeasurementsList.length"
+            [page]="params.skip"
+            (pageChange)="onChangePage($event)"></app-pagination>
+    </div>
 </div>

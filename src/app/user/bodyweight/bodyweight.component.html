@@ -1,68 +1,69 @@
-
-<div class="row box-border width">
-    <app-filter
-        [filterByOptions]="filterByOptions"
-        [rangeOptions]="rangeOptions"
-        (filterFormSubmit)="onFilterFormSubmit($event)">
-    </app-filter>
-</div>
-<div class="row  width">
-    <div  class="row justify-content-center">
-        <div class="col-4 m-3">
-            <table class="table pb-3" >
-                <thead>
-                  <tr>
-                    <th scope="col">
-                        <div class="th-box">
-                            <p>Date</p>
-                            <div class="sort-btns">
-                                <button (click)="sortBy('createdAt:asc')">
-                                    <ion-icon name="caret-up-outline"></ion-icon>
-                                </button>
-                                <button (click)="sortBy('createdAt:desc')">
-                                    <ion-icon name="caret-down-outline"></ion-icon>
-                                </button>
+<div class="bw-container fade-in">
+    <div class="row box-border width">
+        <app-filter
+            [filterByOptions]="filterByOptions"
+            [rangeOptions]="rangeOptions"
+            (filterFormSubmit)="onFilterFormSubmit($event)">
+        </app-filter>
+    </div>
+    <div class="row  width">
+        <div  class="row justify-content-center">
+            <div class="col-4 m-3">
+                <table class="table pb-3" >
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                            <div class="th-box">
+                                <p>Date</p>
+                                <div class="sort-btns">
+                                    <button (click)="sortBy('createdAt:asc')">
+                                        <ion-icon name="caret-up-outline"></ion-icon>
+                                    </button>
+                                    <button (click)="sortBy('createdAt:desc')">
+                                        <ion-icon name="caret-down-outline"></ion-icon>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </th>
-                    <th scope="col">
-                        <div class="th-box">
-                            <p>Bodyweight (kg)</p>
-                            <div class="sort-btns">
-                                <button (click)="sortBy('weight:asc')">
-                                    <ion-icon name="caret-up-outline"></ion-icon>
-                                </button>
-                                <button (click)="sortBy('weight:desc')">
-                                    <ion-icon name="caret-down-outline"></ion-icon>
-                                </button>
+                        </th>
+                        <th scope="col">
+                            <div class="th-box">
+                                <p>Bodyweight (kg)</p>
+                                <div class="sort-btns">
+                                    <button (click)="sortBy('weight:asc')">
+                                        <ion-icon name="caret-up-outline"></ion-icon>
+                                    </button>
+                                    <button (click)="sortBy('weight:desc')">
+                                        <ion-icon name="caret-down-outline"></ion-icon>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </th>
-                    <th scope="col"></th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <app-bodyweight-item
-                        *ngFor="let bodyweight of bodyweightList"
-                        [bodyweight]="bodyweight"
-                        (bodyweightDeleted)="onBodyweightDeleted()">
-                    </app-bodyweight-item>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-4 m-3 align-self-start">
-                <app-bodyweight-form
-                    (createdBodyweight)="onCreatedBodyweight()"
-                    [_id]="editID">
-                </app-bodyweight-form>
+                        </th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <app-bodyweight-item
+                            *ngFor="let bodyweight of bodyweightList"
+                            [bodyweight]="bodyweight"
+                            (bodyweightDeleted)="onBodyweightDeleted()">
+                        </app-bodyweight-item>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-4 m-3 align-self-start">
+                    <app-bodyweight-form
+                        (createdBodyweight)="onCreatedBodyweight()"
+                        [_id]="editID">
+                    </app-bodyweight-form>
+            </div>
         </div>
     </div>
-</div>
-<div class="row m-5">
-    <app-pagination
-        [limit]="params.limit"
-        [listLength]="bodyweightList.length"
-        [page]="params.skip"
-        (pageChange)="onChangePage($event)">
-    </app-pagination>
+    <div class="row m-5">
+        <app-pagination
+            [limit]="params.limit"
+            [listLength]="bodyweightList.length"
+            [page]="params.skip"
+            (pageChange)="onChangePage($event)">
+        </app-pagination>
+    </div>
 </div>
